@@ -10,4 +10,5 @@ switch ($url) {
     case 'fetch_loai_treeview':
         HomeController::treeview();
         break;
+        // doan nay thu test tren nhanh truongnqph14956
 }
