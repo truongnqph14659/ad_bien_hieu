@@ -371,6 +371,8 @@
             }
         })
     </script>
+    <script src="<?= server_port ?>public/lib/easing/easing.min.js"></script>
+    <script src="<?= server_port ?>public/js/main.js"></script>
     <script src="<?= server_port ?>public/js/bstreeview.js"></script>
     <script>
         $(function() {
@@ -395,11 +397,24 @@
                         parentsMarginLeft: '1.25rem',
                         openNodeLinkOnNewTab: false
                     });
+                    // Dropdown on mouse hover
+                    // $(document).ready(function() {
+                    //     function toggleNavbarMethod() {
+                    //         if ($(window).width() > 992) {
+                    //             $('.list-group-item .list-group').on('mouseout', function() {
+                    //                 $('.state-icon', this).trigger('click').blur();
+                    //             });
+                    //         } else {
+                    //             $('.list-group-item .list-group').off('mouseover').off('mouseout');
+                    //         }
+                    //     }
+                    //     toggleNavbarMethod();
+                    //     $(window).resize(toggleNavbarMethod);
+                    // });
                 }
             })
         });
     </script>
-
 </body>
 
 </html>
