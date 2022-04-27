@@ -17,4 +17,10 @@ class HomeController extends BaseModel
         }
         echo json_encode(array_values($data_resault));
     }
+    static function products()
+    {
+        $model =  new static;
+        $data_sp = isset($_GET['key']) == false ? $model->Get_Data_Sp() : $model->Get_Data_Sp_Keyword($_GET['key']);
+        include './app/views/Home/product.php';
+    }
 }
