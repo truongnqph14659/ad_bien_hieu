@@ -150,6 +150,31 @@ dl {
 .ul_products li {
   padding-left: 0;
 }
+/* slogan */
+.slogan_branch {
+  margin-left: 15px;
+  padding-top: 14px;
+}
+
+.slogan_branch h2 {
+  color: var(--white);
+  font-size: 20px;
+  font-weight: bold;
+}
+.tien_phong {
+  color: var(--white);
+  font-size: 20px;
+}
+
+.slogan_branch h2 {
+  text-transform: uppercase;
+}
+
+.slogan_branch span {
+  margin-left: 25px;
+  margin-top: 5px;
+  text-transform: capitalize;
+}
 /* =====================css cart list information============== */
 
 .cart_list {
@@ -320,6 +345,34 @@ dl {
 
   .header_cart_item-price-wrap {
     display: none;
+  }
+  /* slogan */
+  .slogan_branch {
+    margin-left: 5px;
+    padding-top: 5px;
+  }
+
+  .slogan_branch h2 {
+    color: var(--dark);
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  .tien_phong {
+    color: var(--dark);
+    font-size: 15px;
+  }
+
+  .slogan_branch h2 {
+    text-transform: uppercase;
+  }
+  .nav-item.active {
+    background-color: beige;
+  }
+  .slogan_branch span {
+    margin-left: 25px;
+    margin-top: 5px;
+    text-transform: capitalize;
   }
 }
 ol ol,
@@ -3929,7 +3982,6 @@ input[type='button'].btn-block {
   display: block;
   min-height: 1.5rem;
   padding-left: 1.5rem;
-  color-adjust: exact;
 }
 
 .custom-control-inline {

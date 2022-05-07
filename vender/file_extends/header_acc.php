@@ -6,7 +6,7 @@
     if (!isset($_SESSION["user_account"])) :
     ?>
         <a href="form_logn_in" class="nav-item nav-link d-none d-lg-block">Đăng nhập</a>
-        <a href="form_register" class="nav-item nav-link d-none d-lg-block">Đăng ký</a>
+        <a href="#" class="nav-item nav-link d-none d-lg-block">Đăng ký</a>
     <?php
     endif;
     ?>
@@ -20,8 +20,8 @@
             </span>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <?php if ($_SESSION["user_account"]['user_role'] == 0) : ?>
-                    <li><a class="dropdown-item text-dark" href="user_page">tài khoản của tôi</a></li>
-                    <li><a class="dropdown-item text-dark" href="forgot_pass">đổi mật khẩu</a></li>
+                    <li><a class="dropdown-item text-dark" href="#">tài khoản của tôi</a></li>
+                    <li><a class="dropdown-item text-dark" href="#">đổi mật khẩu</a></li>
                 <?php endif; ?>
                 <li><a class="dropdown-item text-dark" href="logn_out">đăng xuất</a></li>
             </ul>

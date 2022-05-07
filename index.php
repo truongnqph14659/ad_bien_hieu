@@ -19,5 +19,8 @@ switch ($url) {
     case 'contact':
         HomeController::contact();
         break;
+    case 'form_logn_in':
+        HomeController::sign_in();
+        break;
         // doan nay thu test tren nhanh truongnqph14956
 }

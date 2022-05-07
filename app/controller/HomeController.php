@@ -67,4 +67,9 @@ class HomeController extends BaseModel
         $data_aside = $model->data_aside();
         include './app/views/Home/contact.php';
     }
+    // sign_in
+    static function sign_in()
+    {
+        include './app/views/Home/sign_in.php';
+    }
 }
