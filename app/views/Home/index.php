@@ -2,14 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>EShopper - Bootstrap Shop Template</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
-
+    <?php
+    require_once './vender/file_extends/title_keyword.php';
+    ?>
     <!-- Favicon -->
-    <link href="<?= server_port ?>du_an_1/public/img/favicon.ico" rel="icon">
+    <link href="<?= server_port ?>public/img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -68,7 +65,7 @@
                             <a href="product" class="nav-item nav-link">Sản Phẩm</a>
                             <a href="#" class="nav-item nav-link">Tin Tức</a>
 
-                            <a href="contact_page" class="nav-item nav-link">Liên Hệ</a>
+                            <a href="contact" class="nav-item nav-link">Liên Hệ</a>
                         </div>
                         <?php
                         require_once './vender/file_extends/header_acc.php';
@@ -100,41 +97,12 @@
                 </div>
             </div>
         </div>
-
-
-
         <div class="row px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
-                <h1 class="aside_sp_moi_xem pb-2">Tin tức sản phẩm</h1>
-                <div class="aside_seen_products">
-                    <?php
-                    $count = 0;
-                    ?>
-                    <?php foreach ($data_sp as $values) : ?>
-                        <?php if ($count < 8) : ?>
-                            <?php
-                            $count++; ?>
-                            <section class="aside_seen_product">
-                                <div class="aside_picture">
-                                    <a href="details?id_sp=<?= $values['ma_san_pham'] ?>">
-                                        <img src="<?= $values['images_sp'] ?>">
-                                    </a>
-                                </div>
-                                <div class="aside_text">
-                                    <a href="details?id_sp=<?= $values['ma_san_pham'] ?>">
-                                        <h4>
-                                            <?php
-                                            $string_ten = (strlen($values["ten_sp"]) > 40) ? substr($values["ten_sp"], 0, 30) . '...' : $values["ten_sp"];
-                                            echo $string_ten;
-                                            ?>
-                                        </h4>
-                                    </a>
-                                    <span>Gía: Liên hệ</span>
-                                </div>
-                            </section>
-                        <?php endif ?>
-                    <?php endforeach; ?>
-                </div>
+                <h1 class="aside_sp_moi_xem pb-2">sản phẩm của chúng tôi</h1>
+                <?php
+                require_once './vender/file_extends/data_aside.php';
+                ?>
                 <h1 class="aside_sp_moi_xem">Tư vấn</h1>
                 <div class="group_tin">
                     <div class="group_tin_tieude"><i class="fa fa-weixin fa_icon" aria-hidden="true"></i>Hỗ trợ trực tuyến</div>
@@ -155,172 +123,49 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-9">
-                <div class="container">
-                    <div class="text-center my-2">
-                        <h2 class="section-title px-5"><span class="px-2">Bảng chữ nổi</span></h2>
-                    </div>
-                    <div class="owl-carousel owl-theme owl-loaded">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage">
-                                <?php foreach ($data_sp as $values) : ?>
-                                    <div class="owl-item pb-1">
-                                        <div class="card product-item">
-                                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                                <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none"><img class="imgUNcover" src="<?= $values["images_sp"] ?>" alt=""></a>
-                                            </div>
-                                            <div class="card-body border-left border-right text-center p-0 pt-2 pb-3">
-                                                <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none">
-                                                    <p class="text-truncate">
-                                                        <?php
-                                                        $string_ten = $values["ten_sp"];
-                                                        echo $string_ten;
-                                                        ?>
-                                                    </p>
-                                                </a>
-                                                <ul class="ul_products list-unstyled">
-                                                    <li>
-                                                        <?php
-                                                        echo "Mã SP: " . $values["ma_san_pham"];
-                                                        ?>
-                                                    </li>
-                                                </ul>
-                                                <div class="d-flex justify-content-center">
-                                                    <h6 class="text-muted text-danger">Gía: Liên hệ</h6>
+            <div class="col-lg-9 mt-2">
+                <?php foreach ($sub_array as $order => $values_data) : ?>
+                    <div class="container">
+                        <div class="text-center my-2">
+                            <h2 class="section-title px-5"><span class="px-2"><?= $order ?></span></h2>
+                        </div>
+                        <div class="owl-carousel owl-theme owl-loaded">
+                            <div class="owl-stage-outer">
+                                <div class="owl-stage">
+                                    <?php foreach ($values_data as $values) : ?>
+                                        <div class="owl-item pb-1">
+                                            <div class="card product-item">
+                                                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                                    <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none"><img class="imgUNcover" src="<?= $values["images_sp"] ?>" alt=""></a>
+                                                </div>
+                                                <div class="card-body border-left border-right text-center p-0 pt-2 pb-3">
+                                                    <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none">
+                                                        <p class="text-truncate">
+                                                            <?php
+                                                            $string_ten = $values["ten_sp"];
+                                                            echo $string_ten;
+                                                            ?>
+                                                        </p>
+                                                    </a>
+                                                    <ul class="ul_products list-unstyled">
+                                                        <li>
+                                                            <?php
+                                                            echo "Mã SP: " . $values["ma_san_pham"];
+                                                            ?>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="d-flex justify-content-center">
+                                                        <h6 class="text-muted text-danger">Gía: Liên hệ</h6>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                <?php endforeach; ?>
+                                    <?php endforeach; ?>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- Products End -->
-                <div class="container">
-                    <div class="text-center my-2">
-                        <h2 class="section-title px-5"><span class="px-2">Bảng quảng cáo</span></h2>
-                    </div>
-                    <div class="owl-carousel owl-theme owl-loaded">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage">
-                                <?php foreach ($data_sp as $values) : ?>
-                                    <div class="owl-item pb-1">
-                                        <div class="card product-item">
-                                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                                <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none"><img class="imgUNcover" src="<?= $values["images_sp"] ?>" alt=""></a>
-                                            </div>
-                                            <div class="card-body border-left border-right text-center p-0 pt-2 pb-3">
-                                                <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none">
-                                                    <p class="text-truncate">
-                                                        <?php
-                                                        $string_ten = $values["ten_sp"];
-                                                        echo $string_ten;
-                                                        ?>
-                                                    </p>
-                                                </a>
-                                                <ul class="ul_products list-unstyled">
-                                                    <li>
-                                                        <?php
-                                                        echo "Mã SP: " . $values["ma_san_pham"];
-                                                        ?>
-                                                    </li>
-                                                </ul>
-                                                <div class="d-flex justify-content-center">
-                                                    <h6 class="text-muted text-danger">Gía: Liên hệ</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php endforeach; ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Subscribe Start -->
-                <div class="container">
-                    <div class="text-center my-2">
-                        <h2 class="section-title px-5"><span class="px-2">Bảng điện tử</span></h2>
-                    </div>
-                    <div class="owl-carousel owl-theme owl-loaded">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage">
-                                <?php foreach ($data_sp as $values) : ?>
-                                    <div class="owl-item pb-1">
-                                        <div class="card product-item">
-                                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                                <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none"><img class="imgUNcover" src="<?= $values["images_sp"] ?>" alt=""></a>
-                                            </div>
-                                            <div class="card-body border-left border-right text-center p-0 pt-2 pb-3">
-                                                <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none">
-                                                    <p class="text-truncate">
-                                                        <?php
-                                                        $string_ten = $values["ten_sp"];
-                                                        echo $string_ten;
-                                                        ?>
-                                                    </p>
-                                                </a>
-                                                <ul class="ul_products list-unstyled">
-                                                    <li>
-                                                        <?php
-                                                        echo "Mã SP: " . $values["ma_san_pham"];
-                                                        ?>
-                                                    </li>
-                                                </ul>
-                                                <div class="d-flex justify-content-center">
-                                                    <h6 class="text-muted text-danger">Gía: Liên hệ</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php endforeach; ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Subscribe End -->
-                <div class="container">
-                    <div class="text-center my-2">
-                        <h2 class="section-title px-5"><span class="px-2">Bảng công ty</span></h2>
-                    </div>
-                    <div class="owl-carousel owl-theme owl-loaded">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage">
-                                <?php foreach ($data_sp as $values) : ?>
-                                    <div class="owl-item pb-1">
-                                        <div class="card product-item">
-                                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                                <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none"><img class="imgUNcover" src="<?= $values["images_sp"] ?>" alt=""></a>
-                                            </div>
-                                            <div class="card-body border-left border-right text-center p-0 pt-2 pb-3">
-                                                <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none">
-                                                    <p class="text-truncate">
-                                                        <?php
-                                                        $string_ten = $values["ten_sp"];
-                                                        echo $string_ten;
-                                                        ?>
-                                                    </p>
-                                                </a>
-                                                <ul class="ul_products list-unstyled">
-                                                    <li>
-                                                        <?php
-                                                        echo "Mã SP: " . $values["ma_san_pham"];
-                                                        ?>
-                                                    </li>
-                                                </ul>
-                                                <div class="d-flex justify-content-center">
-                                                    <h6 class="text-muted text-danger">Gía: Liên hệ</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php endforeach; ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>

@@ -13,5 +13,11 @@ switch ($url) {
     case 'product':
         HomeController::products();
         break;
+    case 'product_detail':
+        HomeController::product_detail();
+        break;
+    case 'contact':
+        HomeController::contact();
+        break;
         // doan nay thu test tren nhanh truongnqph14956
 }

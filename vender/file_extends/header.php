@@ -16,7 +16,7 @@ require_once './vender/file_extends/header_cart.php';
                         <a href="product_page" class="nav-item nav-link">Sản Phẩm</a>
                         <a href="#" class="nav-item nav-link">Tin Tức</a>
 
-                        <a href="contact_page" class="nav-item nav-link">Liên Hệ</a>
+                        <a href="contact" class="nav-item nav-link">Liên Hệ</a>
                     </div>
                     <?php
                     require_once './vender/file_extends/header_acc.php';
