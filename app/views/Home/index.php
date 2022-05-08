@@ -110,7 +110,7 @@
                                 <div class="clear"></div>
                                 <div class="itemgroup">
                                     <div class="itemphone">
-                                        <a style="color:red;font-size:16px;" href="tel:0869.919.717" title="" data-toggle="tooltip" data-original-title="Call"><i class="fa fa-phone fa-2x"></i>Zalo: 0869.919.717</a>
+                                        <a style="color:red;font-size:16px;" href="tel:<?= so_dien_thoai ?>" title="" data-toggle="tooltip" data-original-title="Call"><i class="fa fa-phone fa-2x"></i>Zalo: <?= so_dien_thoai ?></a>
                                     </div>
                                     <div class="clear"></div>
                                 </div>

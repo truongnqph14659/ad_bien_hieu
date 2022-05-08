@@ -4,12 +4,11 @@
             <a href="" class="text-decoration-none">
                 <h1 class="mb-4 display-5 font-weight-semi-bold text-light"><span class="font-weight-bold border border-white px-3 mr-1">D</span>ịch Vụ Bảng Hiệu</h1>
             </a>
-            <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>Địa chỉ: Số 129 + 131, phố Lê
-                Thanh Nghị, Phường Đồng Tâm, Quận Hai Bà Trưng, Hà Nội</p>
-            <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>cokhiquangcaoanthinh@gmail.com</p>
+            <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i><?= dia_chi ?></p>
+            <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i><?= email ?></p>
             <!-- fa fa-globe -->
-            <p class="mb-2"><i class="fa fa-globe text-primary mr-3"></i>dichvubanghieu.com</p>
-            <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
+            <p class="mb-2"><i class="fa fa-globe text-primary mr-3"></i><?= website ?></p>
+            <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i><?= so_dien_thoai ?></p>
         </div>
         <div class="col-lg-8 col-md-12">
             <div class="row">
@@ -51,8 +50,8 @@
     <div class="row border-top border-light mx-xl-5 py-4">
         <div class="col-md-6 px-xl-0">
             <p class="mb-md-0 text-center text-md-left text-light">
-                &copy; <a class="text-light font-weight-semi-bold" href="#">Copyright 2022, dịch vụ bảng hiệu</a>.tư vấn.
-                thiết kế thi công biển quảng cáo
+                &copy; <a class="text-light font-weight-semi-bold" href="#">Copyright 2022, </a> dịch vụ bảng hiệu, tư vấn,
+                thiết kế thi công biển quảng cáo.
             </p>
         </div>
         <div class="col-md-6 px-xl-0 text-center text-md-right">

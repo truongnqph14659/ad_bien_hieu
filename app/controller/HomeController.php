@@ -59,6 +59,7 @@ class HomeController extends BaseModel
         $model =  new static;
         $data_aside = $model->data_aside();
         $data_sp = $model->Get_Data_Sp();
+        $data_private = $model->Get_Data_Private_Sp($_GET['id_sp']);
         include './app/views/Home/detail_product.php';
     }
     static function contact()

@@ -94,7 +94,7 @@
                         <div class="col-lg-6 product media">
                             <div class="block_big_thumb">
                                 <div class="relative">
-                                    <img id="zoom_01" src="https://recmiennam.com/wp-content/uploads/2020/09/anh-dep-lam-hinh-nen-1.jpg" data-zoom-image="https://dichvubanghieu.net/upload/hinhanh/bang-hieu-ngoai-troi-thang-long280.jpg">
+                                    <img id="zoom_01" src="<?= $data_private['images_sp'] ?>" alt="ảnh <?= $data_private['ten_sp'] ?>">
                                 </div>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                             <div class="product-info-price">
                                 <h1>
                                     <div class="page-title-wrapper product">
-                                        <div class="page-title"> <span class="base" data-ui-id="page-title-wrapper" itemprop="name">Bảng hiệu ngoài trời Thăng Long tuyệt đẹp</span> </div>
+                                        <div class="page-title"> <span class="base" data-ui-id="page-title-wrapper" itemprop="name"><?= $data_private['ten_sp'] ?></span> </div>
                                     </div>
                                 </h1>
                                 <div class="product-brand">
@@ -110,9 +110,9 @@
                                         <div style="width:100%;" class="number_start"></div>
 
                                     </div>
-                                    <a href="javascript:;" id="click_scroll_review" classname="txt_color_1"> 5 Nhận xét</a> <span class="hsk-seperator">|</span> <a href="javascript:;" id="click_scroll_qa" classname="txt_color_1"> 1 Hỏi đáp</a>
+                                    <a href="javascript:;" id="click_scroll_review" classname="txt_color_1"> <?= $data_private['ma_san_pham'] ?> Nhận xét</a> <span class="hsk-seperator">|</span> <a href="javascript:;" id="click_scroll_qa" classname="txt_color_1"> 1 Hỏi đáp</a>
                                     <br><br>
-                                    <span style="font-size:16px;">Mã SP: <b>1240</b> </span>
+                                    <span style="font-size:16px;">Mã SP: <b><?= $data_private['ma_san_pham'] ?></b> </span>
                                 </div>
                                 <div data-product-id="3799" data-role="priceBox" class="price-box price-final_price">
                                     <span itemtype="http://schema.org/Offer" itemscope="" itemprop="offers" class="price-container price-final_price tax weee">
@@ -134,7 +134,7 @@
                             <div class="product-add-form">
                                 <div class="box-tocart">
                                     <div class="fieldset">
-                                        <div class="txt_chiase">Zalo &amp; Viber: <b><a href="tel:0869.919.717">0869.919.717</a></b></div>
+                                        <div class="txt_chiase">Zalo &amp; Viber: <b><a href="tel:<?= so_dien_thoai ?>"><?= so_dien_thoai ?></a></b></div>
                                         <div class="field qty">
                                             <div class="control">
                                                 <span class="txt_color_2 txt_12" id="stockMin"></span>
@@ -166,7 +166,7 @@
                             <p><span style="font-size: large;">INOX: Chất liệu inox màu vàng, màu trắng bóng, trắng xước, …. Dày 1.0mm, loại 304 (loại tốt không gỉ sét).</span><br><span style="font-size: large;"> Giá: 2.500.000 – 3.700.000 VND/M2</span><br><span style="font-size: large;"> Ngoài ra, chúng tôi còn nhận thi công thiết kế gói shop cửa hàng với bộ&nbsp;nhận dạng thương hiệu màu sắc, tủ quầy kệ theo yêu cầu</span></p>
                             <p><em><span style="font-size: large;">Thiết kế thi công trọn gói cửa hàng kinh doanh</span></em></p>
                             <p><span style="font-size: large;"><strong><br></strong></span></p>
-                            <h2 style="text-align: center;"><span style="font-size: xx-large;"><strong>Hotline: </strong><a href="tel:0974444503"><strong>0974.444.503</strong></a></span></h2>
+                            <h2 style="text-align: center;"><span style="font-size: xx-large;"><strong>Hotline: </strong><a href="tel:<?= so_dien_thoai ?>"><strong><?= so_dien_thoai ?></strong></a></span></h2>
                             <p>&nbsp;</p>
                             <h3><span style="font-size: large;">Dịch vụ làm bảng hiệu quảng cáo An Thịnh Hoàng Gia<br></span></h3>
                             <ul>
@@ -193,7 +193,7 @@
                                 <li><span style="font-size: large;">Thiết kế thi công làm bảng hiệu quảng cáo cho đại lý xe máy xe đạp</span></li>
                                 <li><span style="font-size: large;">Thiết kế thi công làm bảng hiệu quảng cáo cho trung tâm thương mại</span></li>
                             </ul>
-                            <p><strong><br><br><span style="font-size: medium;">CÔNG TY TNHH CƠ KHÍ QUẢNG CÁO AN THỊNH HOÀNG GIA</span></strong><br><span style="font-size: medium;"><strong>Bình Dương:</strong> T6/38 KP.Bình Thuận 2, P.Thuận Giao, Tx.Thuận An, Bình Dương</span><br><span style="font-size: medium;"><strong>Hồ Chí Minh:</strong> 317/10 Quang Trung, Phường 10 , Quận Gò Vấp, TP Hồ Chí Minh</span><br><span style="font-size: medium;"><strong>Đồng Nai:</strong> 1969 QL51 Biên hòa 1&amp;2, Amata, Long Bình, Tam phước, Đồng Nai</span><br><span style="font-size: medium;">Điện Thoại: <a href="tel:0974444503"><strong>0974.444.503</strong></a></span><br><span style="font-size: medium;">Email: cokhiquangcaoanthinh@gmail.com - Website: dichvubanghieu.net</span></p>
+                            <p><strong><br><br><span style="font-size: medium;"><?= name_brand ?></span></strong><br><span style="font-size: medium;"><strong>Thái Bình: </strong> <?= dia_chi ?> </span><br><span style="font-size: medium;">Email: <?= email ?> - Website: <?= website ?></span></p>
                         </div>
                     </div>
                     <div id="box_rating" class="item_box_col_right space_bottom_20">
@@ -253,7 +253,7 @@
                                     </div>
                                 </div>
                                 <div class="block_total_right col-lg-5 col-md-4 col-sm-4 text-center">
-                                    <div class="txt_chiase">Zalo &amp; Viber tư vấn: <b><a href="tel:0974.444.503">0974.444.503</a></b></div>
+                                    <div class="txt_chiase">Zalo &amp; Viber tư vấn: <b><a href="tel:<?= so_dien_thoai ?>"><?= so_dien_thoai ?></a></b></div>
                                     <a rel="nofollow" href="#" class="btn btn_site_2 write-rating-btn" style="background:green;">Click Đặt Ngay</a>
                                 </div>
                             </div>

@@ -93,7 +93,7 @@
                     <div id="colcontent">
                         <div class="lienheform clearfix">
                             <div class="thongtin clearfix">
-                                <p><strong>CÔNG TY TNHH CƠ KHÍ QUẢNG CÁO AN THỊNH</strong><br><strong>Thái Bình:</strong> 317/10 Quang Trung, Phường 10 , Quận Gò Vấp, TP Thái Bình<br>Email: cokhiquangcaoanthinh@gmail.com - Website: dichvubanghieu.net</p>
+                                <p><strong><?= name_brand ?></strong><br><strong>Thái Bình: </strong> <?= dia_chi ?><br><strong>Số Điện Thoại Liên Hệ: </strong><?= so_dien_thoai ?><br><strong>Email: <?= email ?> - Website: <?= website ?></p>
                                 <hr>
                             </div>
                             <div class="col-lg-12 col-sm-12">

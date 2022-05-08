@@ -23,7 +23,7 @@ class BaseModel
     static function Get_Data_Private_Sp($id)
     {
         $model = new static;
-        $sql = "SELECT 	san_pham.so_luot_xem,san_pham.mo_ta_ct,san_pham.ma_san_pham,san_pham.ten_sp,san_pham.don_gia,san_pham.giam_gia,san_pham.images_sp,san_pham.sl_luu_kho,san_pham.ma_loai_sp,san_pham.thoi_gian_bat_dau,san_pham.thoi_gian_ket_thuc,san_pham.ma_option,chi_tiet_sp.ma_ct_sp,chi_tiet_sp.chung_loai,chi_tiet_sp.part_number,chi_tiet_sp.mau_sac,chi_tiet_sp.CPU,chi_tiet_sp.RAM,chi_tiet_sp.VGA,chi_tiet_sp.ROM,chi_tiet_sp.man_hinh FROM san_pham JOIN chi_tiet_sp ON san_pham.ma_san_pham = chi_tiet_sp.ma_san_pham WHERE san_pham.ma_san_pham=$id";
+        $sql = "SELECT 	* FROM san_pham WHERE ma_san_pham=$id";
         $stmt = $model->conn->prepare($sql);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
