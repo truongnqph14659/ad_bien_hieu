@@ -5,9 +5,6 @@
     <?php
     require_once './vender/file_extends/title_keyword.php';
     ?>
-    <!-- Favicon -->
-    <link href="<?= server_port ?>public/img/favicon.ico" rel="icon">
-
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -84,7 +81,7 @@
                         ?>
                         <?php foreach ($arr as $order => $values) : ?>
                             <div class="carousel-item <?= $order == 0 ? 'active' : '' ?>">
-                                <img class="d-block w-100" src="<?= $values['images_banner_sp'] ?>" alt="First slide">
+                                <img class="d-block w-100" src="<?= $values['images_banner_sp'] ?>" alt="silde ảnh banner quảng cáo">
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -136,7 +133,7 @@
                                         <div class="owl-item pb-1">
                                             <div class="card product-item">
                                                 <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                                    <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none"><img class="imgUNcover" src="<?= $values["images_sp"] ?>" alt=""></a>
+                                                    <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none"><img class="imgUNcover" src="<?= $values["images_sp"] ?>" alt=" ảnh <?= $values["ten_sp"] ?>"></a>
                                                 </div>
                                                 <div class="card-body border-left border-right text-center p-0 pt-2 pb-3">
                                                     <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none">
@@ -176,22 +173,12 @@
     ?>
     <!-- Footer End -->
 
-
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
-
-
     <script>
         $('.carousel').carousel({
             interval: 5000
         })
-        // $('.carousel-control-prev').on('slide.bs.carousel', function() {
-        //     $('.carousel').carousel('prev')
-        // })
-        // // carousel-control-next
-        // $('.carousel-control-next').on('slide.bs.carousel', function() {
-        //     $('.carousel').carousel('next')
-        // })
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <!-- Initialize Swiper -->
@@ -242,20 +229,6 @@
                         parentsMarginLeft: '1.25rem',
                         openNodeLinkOnNewTab: false
                     });
-                    // Dropdown on mouse hover
-                    // $(document).ready(function() {
-                    //     function toggleNavbarMethod() {
-                    //         if ($(window).width() > 992) {
-                    //             $('.list-group-item .list-group').on('mouseout', function() {
-                    //                 $('.state-icon', this).trigger('click').blur();
-                    //             });
-                    //         } else {
-                    //             $('.list-group-item .list-group').off('mouseover').off('mouseout');
-                    //         }
-                    //     }
-                    //     toggleNavbarMethod();
-                    //     $(window).resize(toggleNavbarMethod);
-                    // });
                 }
             })
         });

@@ -5,13 +5,8 @@
     <?php
     require_once './vender/file_extends/title_keyword.php';
     ?>
-    <!-- Favicon -->
-    <link href="<?= server_port ?>public/img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -126,7 +121,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-3 pb-2 col-xs-3">
                             <div class="card product-item">
                                 <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                    <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none"><img class="imgUNcover" src="<?= $values["images_sp"] ?>" alt=""></a>
+                                    <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none"><img class="imgUNcover" src="<?= $values["images_sp"] ?>" alt="ảnh sản phẩm biển hiệu của chúng tôi"></a>
                                 </div>
                                 <div class="card-body border-left border-right text-center p-0 pt-2 pb-3">
                                     <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none">

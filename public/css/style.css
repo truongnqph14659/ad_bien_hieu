@@ -773,7 +773,9 @@ nav.nav {
     font-weight: 500;
     height: 67px;
   }
-
+  .section-title {
+    font-size: 14px;
+  }
   .header_cart_item-price-wrap {
     display: none;
   }

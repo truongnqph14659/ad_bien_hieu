@@ -5,10 +5,6 @@
     <?php
     require_once './vender/file_extends/title_keyword.php';
     ?>
-    <!-- Favicon -->
-    <link href="<?= server_port ?>public/img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 

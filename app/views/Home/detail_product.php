@@ -5,10 +5,6 @@
     <?php
     require_once './vender/file_extends/title_keyword.php';
     ?>
-    <!-- Favicon -->
-    <link href="<?= server_port ?>public/img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
@@ -70,7 +66,7 @@
                 <nav class="navbar navbar-expand-lg sticky-top bg-light navbar-light py-1 py-lg-0 px-0">
                     <a href="" class="text-decoration-none d-block d-lg-none">
                         <div class="d-flex align-items-center">
-                            <div class="m-0 display-5 font-weight-semi-bold"><img class="font-weight-bold border img-fluid rounded px-3 mr-1" src="https://logoart.vn/blog/wp-content/uploads/2010/03/xu-huong-thiet-ke-logo-sao-kim.png" width="100px" height="50px"></img></div>
+                            <div class="m-0 display-5 font-weight-semi-bold"><img class="font-weight-bold border img-fluid rounded px-3 mr-1" src="https://logoart.vn/blog/wp-content/uploads/2010/03/xu-huong-thiet-ke-logo-sao-kim.png" alt="logo dich vụ bảng hiệu của chúng tôi" width="100px" height="50px"></img></div>
                             <div class="slogan_branch">
                                 <h2>dịch vụ</h2>
                                 <span class="tien_phong">bảng hiệu</span>

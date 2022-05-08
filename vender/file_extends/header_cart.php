@@ -1,8 +1,8 @@
 <div class="container-fluid header_bg">
     <div class="row align-items-center py-3 px-xl-5">
         <div class="col-lg-3 d-lg-flex d-none d-lg-block">
-            <a href="" class="text-decoration-none">
-                <img src="https://logoart.vn/blog/wp-content/uploads/2010/03/xu-huong-thiet-ke-logo-sao-kim.png" alt="" width="120px" height="80px" srcset="">
+            <a href="index.php" class="text-decoration-none">
+                <img src="https://logoart.vn/blog/wp-content/uploads/2010/03/xu-huong-thiet-ke-logo-sao-kim.png" alt="logo dich vụ bảng hiệu" width="120px" height="80px" srcset="">
             </a>
             <div class="slogan_branch">
                 <h2>dịch vụ</h2>

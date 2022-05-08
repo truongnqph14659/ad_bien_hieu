@@ -174,7 +174,7 @@ class BaseModel
         // tìm parent_id thuộc về id category
         foreach ($result as $row) {
             $sub_array = array();
-            $sub_array['text'] = '<a class="treeitem_click_a" href="product_page?key=' . $row['ten_loai'] . '">' . $row['ten_loai'] . '</a>';
+            $sub_array['text'] = '<a class="treeitem_click_a" href="product?key=' . $row['ten_loai'] . '">' . $row['ten_loai'] . '</a>';
             $sub_array['nodes'] = array_values($model->get_node_data($row['ma_loai_sp']));
             if (count($sub_array['nodes']) == 0) {
                 unset($sub_array['nodes']);
