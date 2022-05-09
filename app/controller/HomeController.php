@@ -99,7 +99,7 @@ class HomeController extends BaseModel
                         'user_password' => $user['password'],
                         'user_role' => $user['role']
                     ];
-                    $user['role'] == 1 ? header("location:admin") : header("location:index.php");
+                    $user['role'] == 1 ? header("location:Dashboard") : header("location:index.php");
                     die;
                 }
                 header("location:form_logn_in?msg=Sorry");
