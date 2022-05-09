@@ -110,7 +110,7 @@
                                         <div style="width:100%;" class="number_start"></div>
 
                                     </div>
-                                    <a href="javascript:;" id="click_scroll_review" classname="txt_color_1"> <?= $data_private['ma_san_pham'] ?> Nhận xét</a> <span class="hsk-seperator">|</span> <a href="javascript:;" id="click_scroll_qa" classname="txt_color_1"> 1 Hỏi đáp</a>
+                                    <a href="javascript:;" id="click_scroll_review" classname="txt_color_1"> <?= $data_private['nhan_xet'] ?> Nhận xét</a> <span class="hsk-seperator">|</span> <a href="javascript:;" id="click_scroll_qa" classname="txt_color_1"> <?= $data_private['hoi_dap'] ?> Hỏi đáp</a>
                                     <br><br>
                                     <span style="font-size:16px;">Mã SP: <b><?= $data_private['ma_san_pham'] ?></b> </span>
                                 </div>

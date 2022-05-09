@@ -25,8 +25,58 @@
 
 <body>
     <?php
-    require_once './vender/file_extends/header.php';
+    require_once './vender/file_extends/header_cart.php';
     ?>
+    <!-- Topbar End -->
+    <!-- Navbar Start -->
+    <div class="container-fluid d-none d-lg-block">
+        <div class="row border-top px-xl-5">
+            <div class="col-lg-12">
+                <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto py-0">
+                            <a href="index.php" class="nav-item nav-link active">Trang Chủ</a>
+                            <a href="product" class="nav-item nav-link">Sản Phẩm</a>
+                            <a href="#" class="nav-item nav-link">Tin Tức</a>
+
+                            <a href="contact" class="nav-item nav-link">Liên Hệ</a>
+                        </div>
+                        <?php
+                        require_once './vender/file_extends/header_acc.php';
+                        ?>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid d-lg-none">
+        <nav class="navbar navbar-expand-lg bg-light navbar-light py-1 py-lg-0 px-0">
+            <a href="" class="text-decoration-none d-block d-lg-none">
+                <div class="d-flex align-items-center">
+                    <div class="m-0 display-5 font-weight-semi-bold"><img class="font-weight-bold border img-fluid rounded px-3 mr-1" src="https://logoart.vn/blog/wp-content/uploads/2010/03/xu-huong-thiet-ke-logo-sao-kim.png" width="100px" height="50px"></img></div>
+                    <div class="slogan_branch">
+                        <h2>dịch vụ</h2>
+                        <span class="tien_phong">bảng hiệu</span>
+                    </div>
+                </div>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav mr-auto py-0">
+                    <a href="index.php" class="nav-item nav-link active">Trang Chủ</a>
+                    <a href="product" class="nav-item nav-link">Sản Phẩm</a>
+                    <a href="#" class="nav-item nav-link">Tin Tức</a>
+                    <a href="contact" class="nav-item nav-link">Liên Hệ</a>
+                </div>
+            </div>
+        </nav>
+    </div>
     <div class="main">
         <!-- Sing in  Form -->
         <section class="sign-in">
@@ -75,7 +125,7 @@
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
-    <script src="http://localhost:80/du_an_1/public/js/form_values.js"></script>
+    <script src="<?= server_port ?>public/js/form_values.js"></script>
 </body>
 
 </html>

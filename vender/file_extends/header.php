@@ -15,7 +15,6 @@ require_once './vender/file_extends/header_cart.php';
                         <a href="index.php" class="nav-item nav-link active">Trang Chủ</a>
                         <a href="product" class="nav-item nav-link">Sản Phẩm</a>
                         <a href="#" class="nav-item nav-link">Tin Tức</a>
-
                         <a href="contact" class="nav-item nav-link">Liên Hệ</a>
                     </div>
                     <?php

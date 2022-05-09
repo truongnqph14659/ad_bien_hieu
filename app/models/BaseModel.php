@@ -5,7 +5,7 @@ class BaseModel
     // auto connect database
     function __construct()
     {
-        $this->conn = new PDO("mysql:root=127.0.0.1;dbname=du_an_1;charset=utf8", "root", "");
+        $this->conn = new PDO("mysql:root=127.0.0.1;dbname=quangcao;charset=utf8", "root", "");
     }
     // function insert data to table
 
@@ -28,16 +28,15 @@ class BaseModel
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-    // function get data from table join to another table with condiotion
-    static function Get_Data_Edit($id, $rule)
+    // function get data with condition
+    static function Get_Condition_User($rule, $operator, $id)
     {
         $model = new static;
-        $sql = "SELECT * FROM $model->table WHERE $rule=$id";
+        $sql = "SELECT * FROM user  WHERE $id $operator '$rule'";
         $stmt = $model->conn->prepare($sql);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-
     // function get data with condition
     static function Get_Condition($rule, $operator, $id)
     {
@@ -182,5 +181,14 @@ class BaseModel
             $output[] = $sub_array;
         }
         return $output;
+    }
+    // insert acc
+    static function Insert_User($form_data, $db_data)
+    {
+        $model = new static();
+        $sql = "INSERT into user ($db_data) VALUES ($form_data)";
+        $stmt = $model->conn->prepare($sql);
+        $stmt->execute();
+        header("location:index.php");
     }
 }

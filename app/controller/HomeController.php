@@ -73,4 +73,41 @@ class HomeController extends BaseModel
     {
         include './app/views/Home/sign_in.php';
     }
+    // form_register
+    static function form_register()
+    {
+        require_once './app/views/Home/register.php';
+    }
+    // login acc admin
+    static function login()
+    {
+        if (isset($_POST['signin'])) {
+            $user_name = $_POST['user_name'];
+            $user_password = $_POST['user_password'];
+            $model =  new static;
+            $user = $model->Get_Condition_User("$user_name", '=', 'email');
+            if ($user) {
+                // $hash_pass = password_hash($user_password, PASSWORD_DEFAULT);
+                // echo $hash_pass;
+                // die;
+                if (password_verify($user_password, $user['password'])) {
+                    $_SESSION['user_account'] = [
+                        'user_id' => $user['user_id'],
+                        'user_name' => $user['user_name'],
+                        'user_image' => $user['image'],
+                        'user_email' => $user['email'],
+                        'user_password' => $user['password'],
+                        'user_role' => $user['role']
+                    ];
+                    $user['role'] == 1 ? header("location:admin") : header("location:index.php");
+                    die;
+                }
+                header("location:form_logn_in?msg=Sorry");
+            } else {
+                header("location:form_logn_in?msg=Hold_on");
+            }
+        } else {
+            header("location:form_logn_in?msg=Hold_on");
+        }
+    }
 }

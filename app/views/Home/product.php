@@ -93,7 +93,7 @@
                     </div>
                 </nav>
                 <div class="col-12 pb-1">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
                         <form action="product" method="GET" enctype="multipart/form-data">
                             <div class="input-group">
                                 <input type="text" name="key" class="form-control" placeholder="Tìm kiếm...">
@@ -109,9 +109,6 @@
                                 Sắp xếp theo
                             </button>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="triggerId">
-                                <a class="dropdown-item" href="#">Latest</a>
-                                <a class="dropdown-item" href="#">Popularity</a>
-                                <a class="dropdown-item" href="#">Best Rating</a>
                             </div>
                         </div>
                     </div>
