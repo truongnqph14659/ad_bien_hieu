@@ -14,28 +14,28 @@
   <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-treeview/1.2.0/bootstrap-treeview.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-treeview/1.2.0/bootstrap-treeview.min.css" />
 
-  <link rel="stylesheet" href="<?= server_port ?>du_an_1/public/fontawesome-free-6.0.0/css/all.css">
-  <link rel="stylesheet" href="<?= server_port ?>du_an_1/public/css/css.css">
+  <link rel="stylesheet" href="<?= server_port ?>/public/fontawesome-free-6.0.0/css/all.css">
+  <link rel="stylesheet" href="<?= server_port ?>/public/css/css.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="<?= server_port ?>du_an_1/public/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="<?= server_port ?>/public/plugins/fontawesome-free/css/all.min.css">
 
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href="<?= server_port ?>du_an_1/public/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <link rel="stylesheet" href="<?= server_port ?>/public/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
   <!-- iCheck -->
-  <link rel="stylesheet" href="<?= server_port ?>du_an_1/public/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="<?= server_port ?>/public/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- JQVMap -->
-  <link rel="stylesheet" href="<?= server_port ?>du_an_1/public/plugins/jqvmap/jqvmap.min.css">
+  <link rel="stylesheet" href="<?= server_port ?>/public/plugins/jqvmap/jqvmap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="<?= server_port ?>du_an_1/public/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="<?= server_port ?>/public/dist/css/adminlte.min.css">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="<?= server_port ?>du_an_1/public/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="<?= server_port ?>/public/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Daterange picker -->
-  <link rel="stylesheet" href="<?= server_port ?>du_an_1/public/plugins/daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="<?= server_port ?>/public/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
-  <link rel="stylesheet" href="<?= server_port ?>du_an_1/public/plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="<?= server_port ?>/public/plugins/summernote/summernote-bs4.min.css">
   <!-- biểu đồ -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
 </head>
@@ -95,7 +95,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="index3.html" class="brand-link">
-        <img src="<?= server_port ?>du_an_1/public/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="<?= server_port ?>/public/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">Admin</span>
       </a>
 
@@ -120,7 +120,7 @@
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item">
-              <a href="http://localhost:80/du_an_1/  " class="nav-link">
+              <a href="http://localhost:81/ad_bien_hieu/" class="nav-link">
                 <i class="fa-solid fa-earth-americas"></i>
                 <p>
                   Dashboard
@@ -153,30 +153,7 @@
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
-                <i class="fa-solid fa-comment-dots"></i>
-                <p>
-                  Feedback
-                  <i class="fas fa-angle-left right"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="Comment" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Comment</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="feedback_user" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Feedback user</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-book"></i>
+              <i class="fa-solid fa-box-open"></i>
                 <p>
                   Products
                   <i class="fas fa-angle-left right"></i>
@@ -184,108 +161,20 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="list_product" class="nav-link">
+                  <a href="Comment" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>List Product</p>
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <a href="add_product" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Add Product</p>
+                    <p>List</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="form_option" class="nav-link">
+                  <a href="feedback_user" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Add Option</p>
+                    <p>Created</p>
                   </a>
                 </li>
               </ul>
             </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="fa-solid fa-calendar-days"></i>
-                <p>
-                  Category
-                  <i class="fas fa-angle-left right"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="list_category" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>List Category</p>
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <a href="add_category" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Add Category</p>
-                  </a>
-                </li>
-
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="fa-solid fa-chart-pie"></i>
-                <p>
-                  Statistical
-                  <i class="fas fa-angle-left right"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="Statiscal" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Statistical category</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="show_charts" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Charts</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="fa-solid fa-cart-plus"></i>
-                <p>
-                  Order
-                  <i class="fas fa-angle-left right"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="list_order" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>List Order</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="fa-solid fa-tags"></i>
-                <p>
-                  Discount
-                  <i class="fas fa-angle-left right"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Chart</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
+            
           </ul>
         </nav>
         <!-- /.sidebar-menu -->

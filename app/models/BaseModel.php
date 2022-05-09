@@ -5,7 +5,7 @@ class BaseModel
     // auto connect database
     function __construct()
     {
-        $this->conn = new PDO("mysql:root=127.0.0.1;dbname=du_an_1;charset=utf8", "root", "");
+        $this->conn = new PDO("mysql:root=127.0.0.1;dbname=quangcao;charset=utf8", "root", "");
     }
     // function insert data to table
     static function Insert_Data($form_data, $db_data, $header)

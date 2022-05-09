@@ -1,4 +1,4 @@
-<?php require_once('./app/views/admin/header.php'); ?>
+<?php require_once('app/views/admin/header.php'); ?>
 <div class="content-wrapper">
   <div class="content-header">
     <div class="container-fluid">
