@@ -27,5 +27,12 @@ switch ($url) {
     case 'form_logn_in':
         HomeController::sign_in();
         break;
+    case 'sign_in':
+        HomeController::login();
+        break;
+    case 'logn_out':
+        unset($_SESSION['user_account']);
+        header('location: index.php');
+        break;
         // doan nay thu test tren nhanh truongnqph14956
 }
