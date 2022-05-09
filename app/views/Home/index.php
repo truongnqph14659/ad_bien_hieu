@@ -71,17 +71,9 @@
                 </nav>
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
-                        <?php
-                        $arr = [];
-                        foreach ($data_sp as $order => $values) {
-                            if ($values['images_banner_sp'] !== null && $values['images_banner_sp'] !== '') {
-                                $arr[] = $values;
-                            }
-                        }
-                        ?>
-                        <?php foreach ($arr as $order => $values) : ?>
+                        <?php foreach ($banners as $order => $values) : ?>
                             <div class="carousel-item <?= $order == 0 ? 'active' : '' ?>">
-                                <img class="d-block w-100" src="<?= $values['images_banner_sp'] ?>" alt="silde ảnh banner quảng cáo">
+                                <img class="d-block w-100" src="<?= url_img . $values['img_banner'] ?>" alt="silde ảnh banner quảng cáo">
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -133,7 +125,7 @@
                                         <div class="owl-item pb-1">
                                             <div class="card product-item">
                                                 <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                                    <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none"><img class="imgUNcover" src="<?= $values["images_sp"] ?>" alt=" ảnh <?= $values["ten_sp"] ?>"></a>
+                                                    <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none"><img class="imgUNcover" src="<?= url_img . $values["images_sp"] ?>" alt=" ảnh <?= $values["ten_sp"] ?>"></a>
                                                 </div>
                                                 <div class="card-body border-left border-right text-center p-0 pt-2 pb-3">
                                                     <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none">

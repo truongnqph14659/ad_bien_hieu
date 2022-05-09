@@ -94,7 +94,7 @@
                         <div class="col-lg-6 product media">
                             <div class="block_big_thumb">
                                 <div class="relative">
-                                    <img id="zoom_01" src="<?= $data_private['images_sp'] ?>" alt="ảnh <?= $data_private['ten_sp'] ?>">
+                                    <img id="zoom_01" src="<?= url_img . $data_private['images_sp'] ?>" alt="ảnh <?= $data_private['ten_sp'] ?>">
                                 </div>
                             </div>
                         </div>
@@ -154,6 +154,7 @@
                         </div>
                     </div>
                     <div class="row mt-2">
+                        <!-- cho code tu dinh huy -->
                         <div class="noidung">
                             <p><span style="font-size: large;"><strong>Bảng giá thi công các loại bảng hiệu</strong></span></p>
                             <p><span style="color: #008000;"><strong><span style="font-size: large;">1. Bảng hiệu quảng cáo Hiflex giá rẻ</span></strong></span><br><span style="font-size: large;"> In trên Bạt Hiflex kỹ thuật số, Căng trên khung sắt (Vuông 20-30, sơn chống rỉ), viền nẹp V nhôm sáng bóng đẹp, thi công lắp đặt bảng hiệu tại các cửa hàng kinh doanh, nhà phân phối, doanh nghiệp</span><br><span style="font-size: large;"> Giá: 170.000 – 370.000 VND/M2</span></p>
