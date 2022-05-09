@@ -6,17 +6,14 @@ require_once './vender/url_server.php';
 session_start();
 $url = isset($_GET['url']) ? $_GET['url'] : "/";
 switch ($url) {
-    case 'Dashboard':
-        $ctr = new DashboardController();
-        $ctr->index();
+    case '/':
+        HomeController::trang_chu();
         break;
-    case 'edit_acount':
-        $ctr = new CustomController();
-        $ctr->edit_acount();
+    case 'fetch_loai_treeview':
+        HomeController::treeview();
         break;
-    case 'list_user':
-        $ctr = new CustomController();
-        $ctr->index();
+    case 'product':
+        HomeController::products();
         break;
     case 'product_detail':
         HomeController::product_detail();
@@ -34,5 +31,19 @@ switch ($url) {
         unset($_SESSION['user_account']);
         header('location: index.php');
         break;
+        // admin
+    case 'Dashboard':
+        $ctr = new DashboardController();
+        $ctr->index();
+        break;
+    case 'edit_acount':
+        $ctr = new CustomController();
+        $ctr->edit_acount();
+        break;
+    case 'list_user':
+        $ctr = new CustomController();
+        $ctr->index();
+        break;
+
         // doan nay thu test tren nhanh truongnqph14956
 }
