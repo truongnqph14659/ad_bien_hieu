@@ -35,7 +35,7 @@
           </thead>
           <tbody>
             <!-- fake data -->
-            <?php foreach ($data_users as $key => $value) : ?>
+            <?php foreach ($data as $key => $value) : ?>
               <tr>
                 <td><?= $value['user_name'] ?></td>
                 <td><?= $value['email'] ?></td>

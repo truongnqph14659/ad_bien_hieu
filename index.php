@@ -10,15 +10,22 @@ switch ($url) {
         $ctr = new DashboardController();
         $ctr->index();
         break;
+    case 'edit_acount':
+        $ctr = new CustomController();
+        $ctr->edit_acount();
+        break;
     case 'list_user':
         $ctr = new CustomController();
         $ctr->index();
         break;
-    // case 'fetch_loai_treeview':
-    //     HomeController::treeview();
-    //     break;
-    // case 'product':
-    //     HomeController::products();
-    //     break;
+    case 'product_detail':
+        HomeController::product_detail();
+        break;
+    case 'contact':
+        HomeController::contact();
+        break;
+    case 'form_logn_in':
+        HomeController::sign_in();
+        break;
         // doan nay thu test tren nhanh truongnqph14956
 }

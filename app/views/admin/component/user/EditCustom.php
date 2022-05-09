@@ -28,20 +28,20 @@
             <!-- /.card-header -->
             <!-- form start -->
             <form action="update_acount" method="POST" enctype="multipart/form-data" id="quickForm" novalidate="novalidate">
-              <input type="hidden" name="cu" value="<?php echo $result['image'] ?>">
-              <input type="hidden" name="id" value="<?php echo $result['id'] ?>">
+              <input type="hidden" name="cu" value="<?php echo $data['image'] ?>">
+              <input type="hidden" name="id" value="<?php echo $data['id'] ?>">
               <div class="card-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">user_name</label>
-                  <input type="text" name="user_name" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="<?= $result['user_name'] ?>">
+                  <input type="text" name="user_name" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="<?= $data['user_name'] ?>">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" name="Email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="<?= $result['email'] ?>">
+                  <input type="email" name="Email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="<?= $data['email'] ?>">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">number phone</label>
-                  <input type="text" name="number_phone" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="<?= $result['number_phone'] ?>">
+                  <input type="text" name="number_phone" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="<?= $data['number_phone'] ?>">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Avatar</label>
@@ -55,18 +55,18 @@
                   <fieldset>
                     <legend>Vai Trò</legend>
                     <label for="">khách hàng</label>
-                    <input type="radio" name="vai_tro" id="" value="0" <?php if ($result['role'] == 0) : ?> checked="" <?php endif; ?>>
+                    <input type="radio" name="vai_tro" id="" value="0" <?php if ($data['role'] == 0) : ?> checked="" <?php endif; ?>>
                     <label for="">Nhân Viên</label>
-                    <input type="radio" name="vai_tro" id="" value="1" <?php if ($result['role'] == 1) : ?> checked="" <?php endif; ?>>
+                    <input type="radio" name="vai_tro" id="" value="1" <?php if ($data['role'] == 1) : ?> checked="" <?php endif; ?>>
                   </fieldset>
                 </div>
                 <div class="form__div">
                   <fieldset>
                     <legend>trạng thái</legend>
                     <label for="">Kích Hoạt</label>
-                    <input type="radio" name="status" id="on" <?php if ($result['status'] == "on") : ?> checked="" <?php endif; ?> value="on">
+                    <input type="radio" name="status" id="on" <?php if ($data['status'] == "on") : ?> checked="" <?php endif; ?> value="on">
                     <label for="">khóa</label>
-                    <input type="radio" name="status" id="off" <?php if ($result['status'] == "" || $result['status'] == "off") : ?> checked="" <?php endif; ?> value="off">
+                    <input type="radio" name="status" id="off" <?php if ($data['status'] == "" || $data['status'] == "off") : ?> checked="" <?php endif; ?> value="off">
                   </fieldset>
                 </div>
                 <div class="form-group mb-0">

@@ -1,8 +1,8 @@
 <div class="container-fluid header_bg">
     <div class="row align-items-center py-3 px-xl-5">
         <div class="col-lg-3 d-lg-flex d-none d-lg-block">
-            <a href="" class="text-decoration-none">
-                <img src="https://logoart.vn/blog/wp-content/uploads/2010/03/xu-huong-thiet-ke-logo-sao-kim.png" alt="" width="120px" height="80px" srcset="">
+            <a href="index.php" class="text-decoration-none">
+                <img src="https://logoart.vn/blog/wp-content/uploads/2010/03/xu-huong-thiet-ke-logo-sao-kim.png" alt="logo dich vụ bảng hiệu" width="120px" height="80px" srcset="">
             </a>
             <div class="slogan_branch">
                 <h2>dịch vụ</h2>
@@ -10,11 +10,11 @@
             </div>
         </div>
         <div class="col-lg-6 col-6 text-left">
-            <form action="product_page" method="GET" enctype="multipart/form-data">
+            <form action="product" method="GET" enctype="multipart/form-data">
                 <div class="input-group">
-                    <input type="text" class="form-control" name="key" placeholder="tìm kiếm sản phẩm">
+                    <input type="text" class="form-control" name="key" placeholder="tìm kiếm sản phẩm theo tên hoặc mã sản phẩm...">
                     <div class="input-group-append search">
-                        <button type="submit" class="input-group-text bg-transparent .text-dark">
+                        <button type="submit" class="input-group-text bg-transparent text-dark">
                             <i class="fa fa-search "></i>
                         </button>
                     </div>

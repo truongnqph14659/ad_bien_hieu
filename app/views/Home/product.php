@@ -2,19 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>EShopper - Bootstrap Shop Template</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
-
-    <!-- Favicon -->
-    <link href="<?= server_port ?>du_an_1/public/img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
+    <?php
+    require_once './vender/file_extends/title_keyword.php';
+    ?>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -41,43 +33,17 @@
 
     <div class="container-fluid mb-2">
         <div class="row border-top px-xl-5">
-            <div class="col-lg-3 d-none d-lg-block">
+            <div class="col-lg-3 d-none d-lg-block mb-4">
                 <div class="d-flex align-items-center danh_muc justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
                     <h6 class="m-0 fs-2">danh mục sản phẩm</h6>
                 </div>
                 <div id="tree">
                 </div>
 
-                <h1 class="aside_sp_moi_xem pb-2">Tin tức sản phẩm</h1>
-                <div class="aside_seen_products">
-                    <?php
-                    $count = 0;
-                    ?>
-                    <?php foreach ($data_sp as $values) : ?>
-                        <?php if ($count < 8) : ?>
-                            <?php
-                            $count++; ?>
-                            <section class="aside_seen_product">
-                                <div class="aside_picture">
-                                    <a href="details?id_sp=<?= $values['ma_san_pham'] ?>">
-                                        <img src="<?= $values['images_sp'] ?>">
-                                    </a>
-                                </div>
-                                <div class="aside_text">
-                                    <a href="details?id_sp=<?= $values['ma_san_pham'] ?>">
-                                        <h4>
-                                            <?php
-                                            $string_ten = (strlen($values["ten_sp"]) > 40) ? substr($values["ten_sp"], 0, 30) . '...' : $values["ten_sp"];
-                                            echo $string_ten;
-                                            ?>
-                                        </h4>
-                                    </a>
-                                    <span>Gía: Liên hệ</span>
-                                </div>
-                            </section>
-                        <?php endif ?>
-                    <?php endforeach; ?>
-                </div>
+                <h1 class="aside_sp_moi_xem pb-2">sản phẩm của chúng tôi</h1>
+                <?php
+                require_once './vender/file_extends/data_aside.php';
+                ?>
                 <h1 class="aside_sp_moi_xem">Tư vấn</h1>
                 <div class="group_tin">
                     <div class="group_tin_tieude"><i class="fa fa-weixin fa_icon" aria-hidden="true"></i>Hỗ trợ trực tuyến</div>
@@ -100,7 +66,7 @@
 
             </div>
             <div class="col-lg-9">
-                <nav class="navbar navbar-expand-lg bg-light navbar-light py-1 py-lg-0 px-0">
+                <nav class="navbar navbar-expand-lg bg-light sticky-top navbar-light py-1 py-lg-0 px-0">
                     <a href="" class="text-decoration-none d-block d-lg-none">
                         <div class="d-flex align-items-center">
                             <div class="m-0 display-5 font-weight-semi-bold"><img class="font-weight-bold border img-fluid rounded px-3 mr-1" src="https://logoart.vn/blog/wp-content/uploads/2010/03/xu-huong-thiet-ke-logo-sao-kim.png" width="100px" height="50px"></img></div>
@@ -119,7 +85,7 @@
                             <a href="product" class="nav-item nav-link">Sản Phẩm</a>
                             <a href="#" class="nav-item nav-link">Tin Tức</a>
 
-                            <a href="contact_page" class="nav-item nav-link">Liên Hệ</a>
+                            <a href="contact" class="nav-item nav-link">Liên Hệ</a>
                         </div>
                         <?php
                         require_once './vender/file_extends/header_acc.php';
@@ -128,13 +94,13 @@
                 </nav>
                 <div class="col-12 pb-1">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <form action="">
+                        <form action="product" method="GET" enctype="multipart/form-data">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search by name">
+                                <input type="text" name="key" class="form-control" placeholder="Tìm kiếm...">
                                 <div class="input-group-append">
-                                    <span class="input-group-text bg-transparent text-primary">
+                                    <button type="submit" class="input-group-text bg-transparent text-primary">
                                         <i class="fa fa-search"></i>
-                                    </span>
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -152,10 +118,10 @@
                 </div>
                 <div class="row pb-3">
                     <?php foreach ($data_sp as $values) : ?>
-                        <div class="col-lg-3 col-md-6 col-sm-6 pb-2">
+                        <div class="col-lg-3 col-md-3 col-sm-3 pb-2 col-xs-3">
                             <div class="card product-item">
                                 <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                    <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none"><img class="imgUNcover" src="<?= $values["images_sp"] ?>" alt=""></a>
+                                    <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none"><img class="imgUNcover" src="<?= $values["images_sp"] ?>" alt="ảnh sản phẩm biển hiệu của chúng tôi"></a>
                                 </div>
                                 <div class="card-body border-left border-right text-center p-0 pt-2 pb-3">
                                     <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none">
@@ -182,38 +148,72 @@
                     <?php endforeach; ?>
                 </div>
                 <div class="col-12 pb-1">
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination justify-content-center mb-3">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                            </li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+                    <?php if (isset($_GET['key'])) : ?>
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination justify-content-center mb-3">
+                                <li class="page-item <?= $current_page == 1 ? 'disabled' : '' ?>">
+                                    <a class="page-link" href="product?page=<?= $current_page - 1 ?>&key=<?= $_GET['key'] ?>" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                </li>
+                                <?php for ($i = 1; $i <= $total_page; $i++) : ?>
+                                    <?php if ($i == $current_page) : ?>
+                                        <li class="page-item"><a class="page-link_active disabled"><?= $i ?></a></li>
+                                    <?php else : ?>
+                                        <li class="page-item"><a class="page-link" href="product?page=<?= $i ?>&key=<?= $_GET['key'] ?>"><?= $i ?></a></li>
+                                    <?php endif; ?>
+                                <?php endfor; ?>
+                                <li class="page-item <?= $current_page == $total_page ? 'disabled' : '' ?>">
+                                    <a class="page-link" href="product?page=<?= $current_page + 1 ?>&key=<?= $_GET['key'] ?>" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    <?php endif ?>
+                    <?php if (!isset($_GET['key'])) : ?>
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination justify-content-center mb-3">
+                                <li class="page-item <?= $current_page == 1 ? 'disabled' : '' ?>">
+                                    <a class="page-link" href="product?page=<?= $current_page - 1 ?>" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                </li>
+                                <?php for ($i = 1; $i <= $total_page; $i++) : ?>
+                                    <?php if ($i == $current_page) : ?>
+                                        <li class="page-item"><a class="page-link_active disabled"><?= $i ?></a></li>
+                                    <?php else : ?>
+                                        <li class="page-item"><a class="page-link" href="product?page=<?= $i ?>"><?= $i ?></a></li>
+                                    <?php endif; ?>
+                                <?php endfor; ?>
+                                <li class="page-item <?= $current_page == $total_page ? 'disabled' : '' ?>">
+                                    <a class="page-link" href="product?page=<?= $current_page + 1 ?>" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    <?php endif ?>
                 </div>
             </div>
         </div>
-        <!-- Footer Start -->
-        <?php
-        require_once './vender/file_extends/footer.php';
-        ?>
-        <!-- Footer End -->
-
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
     </div>
+    <!-- Footer Start -->
+    <?php
+    require_once './vender/file_extends/footer.php';
+    ?>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    </div>
+    <script src="<?= server_port ?>public/lib/easing/easing.min.js"></script>
+    <script src="<?= server_port ?>public/js/main.js"></script>
     <script src="<?= server_port ?>public/js/bstreeview.js"></script>
     <script>
         $(function() {
@@ -243,8 +243,7 @@
         });
     </script>
 
+
 </body>
 
 </html>
-
-<!-- code cho phần treeview -->

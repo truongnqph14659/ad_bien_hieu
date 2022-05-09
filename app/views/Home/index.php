@@ -2,15 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>EShopper - Bootstrap Shop Template</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
-
-    <!-- Favicon -->
-    <link href="<?= server_port ?>du_an_1/public/img/favicon.ico" rel="icon">
-
+    <?php
+    require_once './vender/file_extends/title_keyword.php';
+    ?>
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -68,7 +62,7 @@
                             <a href="product" class="nav-item nav-link">Sản Phẩm</a>
                             <a href="#" class="nav-item nav-link">Tin Tức</a>
 
-                            <a href="contact_page" class="nav-item nav-link">Liên Hệ</a>
+                            <a href="contact" class="nav-item nav-link">Liên Hệ</a>
                         </div>
                         <?php
                         require_once './vender/file_extends/header_acc.php';
@@ -87,7 +81,7 @@
                         ?>
                         <?php foreach ($arr as $order => $values) : ?>
                             <div class="carousel-item <?= $order == 0 ? 'active' : '' ?>">
-                                <img class="d-block w-100" src="<?= $values['images_banner_sp'] ?>" alt="First slide">
+                                <img class="d-block w-100" src="<?= $values['images_banner_sp'] ?>" alt="silde ảnh banner quảng cáo">
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -100,41 +94,12 @@
                 </div>
             </div>
         </div>
-
-
-
         <div class="row px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
-                <h1 class="aside_sp_moi_xem pb-2">Tin tức sản phẩm</h1>
-                <div class="aside_seen_products">
-                    <?php
-                    $count = 0;
-                    ?>
-                    <?php foreach ($data_sp as $values) : ?>
-                        <?php if ($count < 8) : ?>
-                            <?php
-                            $count++; ?>
-                            <section class="aside_seen_product">
-                                <div class="aside_picture">
-                                    <a href="details?id_sp=<?= $values['ma_san_pham'] ?>">
-                                        <img src="<?= $values['images_sp'] ?>">
-                                    </a>
-                                </div>
-                                <div class="aside_text">
-                                    <a href="details?id_sp=<?= $values['ma_san_pham'] ?>">
-                                        <h4>
-                                            <?php
-                                            $string_ten = (strlen($values["ten_sp"]) > 40) ? substr($values["ten_sp"], 0, 30) . '...' : $values["ten_sp"];
-                                            echo $string_ten;
-                                            ?>
-                                        </h4>
-                                    </a>
-                                    <span>Gía: Liên hệ</span>
-                                </div>
-                            </section>
-                        <?php endif ?>
-                    <?php endforeach; ?>
-                </div>
+                <h1 class="aside_sp_moi_xem pb-2">sản phẩm của chúng tôi</h1>
+                <?php
+                require_once './vender/file_extends/data_aside.php';
+                ?>
                 <h1 class="aside_sp_moi_xem">Tư vấn</h1>
                 <div class="group_tin">
                     <div class="group_tin_tieude"><i class="fa fa-weixin fa_icon" aria-hidden="true"></i>Hỗ trợ trực tuyến</div>
@@ -145,7 +110,7 @@
                                 <div class="clear"></div>
                                 <div class="itemgroup">
                                     <div class="itemphone">
-                                        <a style="color:red;font-size:16px;" href="tel:0869.919.717" title="" data-toggle="tooltip" data-original-title="Call"><i class="fa fa-phone fa-2x"></i>Zalo: 0869.919.717</a>
+                                        <a style="color:red;font-size:16px;" href="tel:<?= so_dien_thoai ?>" title="" data-toggle="tooltip" data-original-title="Call"><i class="fa fa-phone fa-2x"></i>Zalo: <?= so_dien_thoai ?></a>
                                     </div>
                                     <div class="clear"></div>
                                 </div>
@@ -155,172 +120,49 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-9">
-                <div class="container">
-                    <div class="text-center my-2">
-                        <h2 class="section-title px-5"><span class="px-2">Bảng chữ nổi</span></h2>
-                    </div>
-                    <div class="owl-carousel owl-theme owl-loaded">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage">
-                                <?php foreach ($data_sp as $values) : ?>
-                                    <div class="owl-item pb-1">
-                                        <div class="card product-item">
-                                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                                <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none"><img class="imgUNcover" src="<?= $values["images_sp"] ?>" alt=""></a>
-                                            </div>
-                                            <div class="card-body border-left border-right text-center p-0 pt-2 pb-3">
-                                                <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none">
-                                                    <p class="text-truncate">
-                                                        <?php
-                                                        $string_ten = $values["ten_sp"];
-                                                        echo $string_ten;
-                                                        ?>
-                                                    </p>
-                                                </a>
-                                                <ul class="ul_products list-unstyled">
-                                                    <li>
-                                                        <?php
-                                                        echo "Mã SP: " . $values["ma_san_pham"];
-                                                        ?>
-                                                    </li>
-                                                </ul>
-                                                <div class="d-flex justify-content-center">
-                                                    <h6 class="text-muted text-danger">Gía: Liên hệ</h6>
+            <div class="col-lg-9 mt-2">
+                <?php foreach ($sub_array as $order => $values_data) : ?>
+                    <div class="container">
+                        <div class="text-center my-2">
+                            <h2 class="section-title px-5"><span class="px-2"><?= $order ?></span></h2>
+                        </div>
+                        <div class="owl-carousel owl-theme owl-loaded">
+                            <div class="owl-stage-outer">
+                                <div class="owl-stage">
+                                    <?php foreach ($values_data as $values) : ?>
+                                        <div class="owl-item pb-1">
+                                            <div class="card product-item">
+                                                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                                    <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none"><img class="imgUNcover" src="<?= $values["images_sp"] ?>" alt=" ảnh <?= $values["ten_sp"] ?>"></a>
+                                                </div>
+                                                <div class="card-body border-left border-right text-center p-0 pt-2 pb-3">
+                                                    <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none">
+                                                        <p class="text-truncate">
+                                                            <?php
+                                                            $string_ten = $values["ten_sp"];
+                                                            echo $string_ten;
+                                                            ?>
+                                                        </p>
+                                                    </a>
+                                                    <ul class="ul_products list-unstyled">
+                                                        <li>
+                                                            <?php
+                                                            echo "Mã SP: " . $values["ma_san_pham"];
+                                                            ?>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="d-flex justify-content-center">
+                                                        <h6 class="text-muted text-danger">Gía: Liên hệ</h6>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                <?php endforeach; ?>
+                                    <?php endforeach; ?>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- Products End -->
-                <div class="container">
-                    <div class="text-center my-2">
-                        <h2 class="section-title px-5"><span class="px-2">Bảng quảng cáo</span></h2>
-                    </div>
-                    <div class="owl-carousel owl-theme owl-loaded">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage">
-                                <?php foreach ($data_sp as $values) : ?>
-                                    <div class="owl-item pb-1">
-                                        <div class="card product-item">
-                                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                                <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none"><img class="imgUNcover" src="<?= $values["images_sp"] ?>" alt=""></a>
-                                            </div>
-                                            <div class="card-body border-left border-right text-center p-0 pt-2 pb-3">
-                                                <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none">
-                                                    <p class="text-truncate">
-                                                        <?php
-                                                        $string_ten = $values["ten_sp"];
-                                                        echo $string_ten;
-                                                        ?>
-                                                    </p>
-                                                </a>
-                                                <ul class="ul_products list-unstyled">
-                                                    <li>
-                                                        <?php
-                                                        echo "Mã SP: " . $values["ma_san_pham"];
-                                                        ?>
-                                                    </li>
-                                                </ul>
-                                                <div class="d-flex justify-content-center">
-                                                    <h6 class="text-muted text-danger">Gía: Liên hệ</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php endforeach; ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Subscribe Start -->
-                <div class="container">
-                    <div class="text-center my-2">
-                        <h2 class="section-title px-5"><span class="px-2">Bảng điện tử</span></h2>
-                    </div>
-                    <div class="owl-carousel owl-theme owl-loaded">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage">
-                                <?php foreach ($data_sp as $values) : ?>
-                                    <div class="owl-item pb-1">
-                                        <div class="card product-item">
-                                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                                <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none"><img class="imgUNcover" src="<?= $values["images_sp"] ?>" alt=""></a>
-                                            </div>
-                                            <div class="card-body border-left border-right text-center p-0 pt-2 pb-3">
-                                                <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none">
-                                                    <p class="text-truncate">
-                                                        <?php
-                                                        $string_ten = $values["ten_sp"];
-                                                        echo $string_ten;
-                                                        ?>
-                                                    </p>
-                                                </a>
-                                                <ul class="ul_products list-unstyled">
-                                                    <li>
-                                                        <?php
-                                                        echo "Mã SP: " . $values["ma_san_pham"];
-                                                        ?>
-                                                    </li>
-                                                </ul>
-                                                <div class="d-flex justify-content-center">
-                                                    <h6 class="text-muted text-danger">Gía: Liên hệ</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php endforeach; ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Subscribe End -->
-                <div class="container">
-                    <div class="text-center my-2">
-                        <h2 class="section-title px-5"><span class="px-2">Bảng công ty</span></h2>
-                    </div>
-                    <div class="owl-carousel owl-theme owl-loaded">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage">
-                                <?php foreach ($data_sp as $values) : ?>
-                                    <div class="owl-item pb-1">
-                                        <div class="card product-item">
-                                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                                <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none"><img class="imgUNcover" src="<?= $values["images_sp"] ?>" alt=""></a>
-                                            </div>
-                                            <div class="card-body border-left border-right text-center p-0 pt-2 pb-3">
-                                                <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none">
-                                                    <p class="text-truncate">
-                                                        <?php
-                                                        $string_ten = $values["ten_sp"];
-                                                        echo $string_ten;
-                                                        ?>
-                                                    </p>
-                                                </a>
-                                                <ul class="ul_products list-unstyled">
-                                                    <li>
-                                                        <?php
-                                                        echo "Mã SP: " . $values["ma_san_pham"];
-                                                        ?>
-                                                    </li>
-                                                </ul>
-                                                <div class="d-flex justify-content-center">
-                                                    <h6 class="text-muted text-danger">Gía: Liên hệ</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php endforeach; ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
@@ -331,22 +173,12 @@
     ?>
     <!-- Footer End -->
 
-
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
-
-
     <script>
         $('.carousel').carousel({
             interval: 5000
         })
-        // $('.carousel-control-prev').on('slide.bs.carousel', function() {
-        //     $('.carousel').carousel('prev')
-        // })
-        // // carousel-control-next
-        // $('.carousel-control-next').on('slide.bs.carousel', function() {
-        //     $('.carousel').carousel('next')
-        // })
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <!-- Initialize Swiper -->
@@ -397,20 +229,6 @@
                         parentsMarginLeft: '1.25rem',
                         openNodeLinkOnNewTab: false
                     });
-                    // Dropdown on mouse hover
-                    // $(document).ready(function() {
-                    //     function toggleNavbarMethod() {
-                    //         if ($(window).width() > 992) {
-                    //             $('.list-group-item .list-group').on('mouseout', function() {
-                    //                 $('.state-icon', this).trigger('click').blur();
-                    //             });
-                    //         } else {
-                    //             $('.list-group-item .list-group').off('mouseover').off('mouseout');
-                    //         }
-                    //     }
-                    //     toggleNavbarMethod();
-                    //     $(window).resize(toggleNavbarMethod);
-                    // });
                 }
             })
         });
