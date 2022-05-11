@@ -20,49 +20,19 @@
                     Quản Lý Chi Tiết Sản Phẩm
                 </div>
             </div>
-            <form class="mx-auto py-1" action="insert_ct_sp" method="post" enctype="multipart/form-data" name="products">
+            <form class="mx-auto py-1" action="insert_ct_sp" method="POST" enctype="multipart/form-data" novalidate="novalidate">
                 <div class="d-flex">
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="formGroupExampleInput" class="form-label">Mã sản phẩm</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" value="<?= $_GET['ma_sp'] ?>" disabled>
-                            <input type="text" class="form-control" name="ma_san_pham" id="formGroupExampleInput" value="<?= $_GET['ma_sp'] ?>" hidden>
+                            <label for="chung_loai" class="form-label">Tên Sản Phẩm</label>
+                            <input type="text" class="form-control" id="chung_loai" name="name" placeholder="nhập vào chủng loại sản phẩm">
                         </div>
                         <div class="mb-3">
-                            <label for="chung_loai" class="form-label">Chủng Loại</label>
-                            <input type="text" class="form-control" id="chung_loai" name="chung_loai" placeholder="nhập vào chủng loại sản phẩm">
+                            <label for="mau_sac" class="form-label">ảnh sản phẩm</label>
+                            <input type="file" class="form-control" id="mau_sac" name="image" placeholder="nhập vào màu sắc">
                         </div>
                         <div class="mb-3">
-                            <label for="part_number" class="form-label">Part number</label>
-                            <input type="text" class="form-control" id="part_number" name="part_number" placeholder="nhập vào part_number">
-                        </div>
-                        <div class="mb-3">
-                            <label for="mau_sac" class="form-label">Màu sắc</label>
-                            <input type="text" class="form-control" id="mau_sac" name="mau_sac" placeholder="nhập vào màu sắc">
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="mb-3">
-                            <label for="formGroupExampleInput2" class="form-label">CPU</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" name="CPU" placeholder="nhập vào CPU">
-                        </div>
-                        <div class="mb-3">
-                            <label for="formGroupExampleInput2" class="form-label">RAM</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" name="RAM" placeholder="nhập vào RAM">
-                        </div>
-                        <div class="mb-3">
-                            <label for="formGroupExampleInput2" class="form-label">ROM</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" name="ROM" placeholder="nhập vào ROM">
-                        </div>
-                        <div class="mb-3">
-                            <label for="formGroupExampleInput2" class="form-label">VGA</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" name="VGA" placeholder="nhập vào VGA">
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="mb-3">
-                            <label for="formGroupExampleInput2" class="form-label">Màn hình</label>
-                            <input type="number" class="form-control" id="formGroupExampleInput2" name="man_hinh" placeholder="nhập vào kích thước màn hình">
+                        <textarea name="content" id="content" class="form-control" rows="5" placeholder="Vui lòng nhập nội dung ..."></textarea>
                         </div>
                     </div>
                 </div>
@@ -73,6 +43,10 @@
         <!--  -->
     </div>
 </div>
+<script src="public/resources/ckeditor/ckeditor.js"></script>
+  <script>
+        CKEDITOR.replace('content')
+    </script>
 <?php
 require_once './vender/src_script_admin.php';
 ?>

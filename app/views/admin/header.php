@@ -120,7 +120,7 @@
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item">
-              <a href="http://localhost:81/ad_bien_hieu/" class="nav-link">
+              <a href="Dashboard" class="nav-link">
                 <i class="fa-solid fa-earth-americas"></i>
                 <p>
                   Dashboard
@@ -161,13 +161,13 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="Comment" class="nav-link">
+                  <a href="list_products" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>List</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="feedback_user" class="nav-link">
+                  <a href="Created_products" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Created</p>
                   </a>

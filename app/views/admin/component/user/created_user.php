@@ -38,50 +38,8 @@
                     <input type="password" class="form-control" id="sl_luu_kho" name="password" placeholder="nhập vào password">
                   </div>
                   <div class="mb-3">
-                    <label for="images_sp" class="form-label">Avatar</label>
-                    <div class="input-group mb-3">
-                      <input type="file" class="form-control" name="avatar" id="images_sp">
-                    </div>
-                  </div>
-                  <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Số điện thoại</label>
                     <input type="text" class="form-control" id="formGroupExampleInput2" name="sdt" placeholder="nhập vào std">
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="mb-3">
-                    <label for="ngay_nhap" class="form-label">Địa_chỉ</label>
-                    <input type="text" class="form-control" id="ngay_nhap" name="dia_chi" placeholder="nhập vào địa chỉ">
-                  </div>
-                  <div class="mb-3">
-                    <label for="ngay_ket" class="form-label">xa_phuong</label>
-                    <input type="text" class="form-control" id="ngay_ket" name="xa_phuong" placeholder="nhập xã phường">
-                  </div>
-                  <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Quận huyện</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" name="quan_huyen" placeholder="nhập vào quận huyện">
-                  </div>
-                  <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Tỉnh Thành</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" name="tinh_thanh" placeholder="nhập vào tỉnh thành">
-                  </div>
-                  <div class="form__div mb-3">
-                    <fieldset>
-                      <legend>Vai Trò</legend>
-                      <label for="">khách hàng</label>
-                      <input type="radio" name="vai_tro" id="" value="0">
-                      <label for="">Nhân Viên</label>
-                      <input type="radio" name="vai_tro" id="" value="1">
-                    </fieldset>
-                  </div>
-                  <div class="form__div mb-3">
-                    <fieldset>
-                      <legend>trạng thái</legend>
-                      <label for="">Kích Hoạt</label>
-                      <input type="radio" name="status" id="on" value="1">
-                      <label for="">khóa</label>
-                      <input type="radio" name="status" id="off" value="0">
-                    </fieldset>
                   </div>
                 </div>
               </div>

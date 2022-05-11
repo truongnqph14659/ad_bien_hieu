@@ -25,38 +25,16 @@
             <tr>
               <th>id_sp</th>
               <th>Name</th>
-              <th>Price</th>
-              <th>Discount</th>
               <th>image</th>
-              <th>sl luu kho</th>
-              <th>tg_bat_dau</th>
-              <th>tg_ket_thuc</th>
-              <th>option</th>
-              <th>chi tiet sp</th>
-              <th>images</th>
               <th>action</th>
             </tr>
           </thead>
           <tbody>
-            <?php foreach ($data_sp as $value) : ?>
+            <?php foreach ($data as $value) : ?>
               <tr>
                 <td><?= $value['ma_san_pham'] ?></td>
                 <td><?= $value['ten_sp'] ?></td>
-                <td><?= $value['don_gia'] ?></td>
-                <td><?= $value['giam_gia'] ?></td>
-                <td><img src="<?= $value['images_sp'] ?>" width="100px"></td>
-                <td><?= $value['sl_luu_kho'] ?></td>
-                <td><?= $value['thoi_gian_bat_dau'] ?></td>
-                <td><?= $value['thoi_gian_ket_thuc'] ?></td>
-                <td>
-                  <a href="list_option_sp?id=<?= $value['ma_san_pham'] ?>"><i class="fas fa-edit btn btn-primary"></i></a>
-                </td>
-                <td>
-                  <a href="list_detail_sp?id=<?= $value['ma_san_pham'] ?>"><i class="fas fa-edit btn btn-primary"></i></a>
-                </td>
-                <td>
-                  <a href="list_images_sp?id=<?= $value['ma_san_pham'] ?>"><i class="fa-solid fa-images btn btn-primary"></i></a>
-                </td>
+                <td><?= $value['images_sp'] ?></td>
                 <td>
                   <a href="edit_product?id=<?= $value['ma_san_pham'] ?>"><i class="fas fa-edit btn btn-primary"></i></a>
                   <a href="remove_product?id=<?= $value['ma_san_pham'] ?>"><i class="fas fa-trash-alt btn btn-danger"></i></a>

@@ -28,8 +28,7 @@
             <!-- /.card-header -->
             <!-- form start -->
             <form action="update_acount" method="POST" enctype="multipart/form-data" id="quickForm" novalidate="novalidate">
-              <input type="hidden" name="cu" value="<?php echo $data['image'] ?>">
-              <input type="hidden" name="id" value="<?php echo $data['id'] ?>">
+              <input type="hidden" name="id" value="<?php echo $data['user_id'] ?>">
               <div class="card-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">user_name</label>
@@ -40,34 +39,8 @@
                   <input type="email" name="Email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="<?= $data['email'] ?>">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">number phone</label>
-                  <input type="text" name="number_phone" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="<?= $data['number_phone'] ?>">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Avatar</label>
-                  <input type="file" name="image" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                </div>
-                <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
                   <input type="password" name="Password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="form__div">
-                  <fieldset>
-                    <legend>Vai Trò</legend>
-                    <label for="">khách hàng</label>
-                    <input type="radio" name="vai_tro" id="" value="0" <?php if ($data['role'] == 0) : ?> checked="" <?php endif; ?>>
-                    <label for="">Nhân Viên</label>
-                    <input type="radio" name="vai_tro" id="" value="1" <?php if ($data['role'] == 1) : ?> checked="" <?php endif; ?>>
-                  </fieldset>
-                </div>
-                <div class="form__div">
-                  <fieldset>
-                    <legend>trạng thái</legend>
-                    <label for="">Kích Hoạt</label>
-                    <input type="radio" name="status" id="on" <?php if ($data['status'] == "on") : ?> checked="" <?php endif; ?> value="on">
-                    <label for="">khóa</label>
-                    <input type="radio" name="status" id="off" <?php if ($data['status'] == "" || $data['status'] == "off") : ?> checked="" <?php endif; ?> value="off">
-                  </fieldset>
                 </div>
                 <div class="form-group mb-0">
                   <div class="custom-control custom-checkbox">

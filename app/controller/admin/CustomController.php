@@ -13,7 +13,12 @@ class CustomController extends BaseModel
     {
         $id = $_GET['id'];
         $conn = new CustomController;
-        $data=$conn->Get_Data('user WHERE user_id = '.$id.'');
+        $data=$conn->Where('user WHERE user_id = '.$id.'');
+        // var_dump($data);
         require_once('app/views/admin/component/user/EditCustom.php');
+    }
+    public function Created_account()
+    {
+        require_once('app/views/admin/component/user/created_user.php');
     }
 }
