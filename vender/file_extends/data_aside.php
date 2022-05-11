@@ -3,7 +3,7 @@
         <section class="aside_seen_product">
             <div class="aside_picture">
                 <a href="details?id_sp=<?= $values['ma_san_pham'] ?>">
-                    <img src="<?= $values['images_sp'] ?>" alt="ảnh <?= $values["ten_sp"] ?>">
+                    <img src="<?= url_img . $values['images_sp'] ?>" alt="ảnh <?= $values["ten_sp"] ?>">
                 </a>
             </div>
             <div class="aside_text">

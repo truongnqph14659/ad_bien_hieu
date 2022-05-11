@@ -7,6 +7,7 @@ class BaseModel
     function __construct()
     {
         $this->conn = new PDO("mysql:root=127.0.0.1;dbname=quangcao;charset=utf8", "root", "");
+        $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
     // function insert data to table
     // function get data from table
@@ -49,8 +50,9 @@ class BaseModel
     static function Get_Data_Private_Sp($id)
     {
         $model = new static;
-        $sql = "SELECT 	* FROM san_pham WHERE ma_san_pham=$id";
+        $sql = "SELECT 	* FROM san_pham WHERE ma_san_pham=:id";
         $stmt = $model->conn->prepare($sql);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
@@ -58,8 +60,9 @@ class BaseModel
     static function Get_Condition_User($rule, $operator, $id)
     {
         $model = new static;
-        $sql = "SELECT * FROM user  WHERE $id $operator '$rule'";
+        $sql = "SELECT * FROM user  WHERE $id $operator :rule";
         $stmt = $model->conn->prepare($sql);
+        $stmt->bindValue(':rule', $rule, PDO::PARAM_STR);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
@@ -67,8 +70,9 @@ class BaseModel
     static function Get_Condition($rule, $operator, $id)
     {
         $model = new static;
-        $sql = "SELECT ma_loai_sp FROM $model->table  WHERE $id $operator '$rule'";
+        $sql = "SELECT ma_loai_sp FROM $model->table  WHERE $id $operator :rule";
         $stmt = $model->conn->prepare($sql);
+        $stmt->bindValue(':rule', $rule, PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -77,8 +81,10 @@ class BaseModel
         $model = new static;
         $new_arr = [];
         foreach ($array as $order => $values) {
-            $sql = "SELECT * FROM san_pham WHERE ma_loai_sp=$values[ma_loai_sp]";
+            $ma_loai = $values['ma_loai_sp'];
+            $sql = "SELECT * FROM san_pham WHERE ma_loai_sp=:ma_loai";
             $stmt = $model->conn->prepare($sql);
+            $stmt->bindValue(':ma_loai', $ma_loai, PDO::PARAM_INT);
             $stmt->execute();
             $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
             if ($data != null) {
@@ -86,7 +92,6 @@ class BaseModel
                     array_push($new_arr, $values);
                 }
             }
-            // return array_merge_recursive($data_array, $data);
         }
         return $new_arr;
     }
@@ -162,8 +167,10 @@ class BaseModel
     static function result_page($start, $limit)
     {
         $model = new static;
-        $sql = "SELECT * FROM san_pham LIMIT $start, $limit";
+        $sql = "SELECT * FROM san_pham LIMIT :start, :limit";
         $stmt = $model->conn->prepare($sql);
+        $stmt->bindValue(':start', $start, PDO::PARAM_INT);
+        $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -171,9 +178,9 @@ class BaseModel
     {
         $model = new static;
         if (is_numeric($key_search)) {
-            $sql = "SELECT * FROM san_pham WHERE ma_san_pham=$key_search LIMIT $start, $limit";
+            $sql = "SELECT * FROM san_pham WHERE ma_san_pham=$key_search LIMIT $start,$limit";
         } else {
-            $sql = "SELECT * FROM san_pham WHERE ten_sp LIKE'%$key_search%' LIMIT $start, $limit";
+            $sql = "SELECT * FROM san_pham WHERE ten_sp LIKE '%$key_search%' LIMIT $start,$limit";
         }
         $stmt = $model->conn->prepare($sql);
         $stmt->execute();
@@ -191,8 +198,9 @@ class BaseModel
     static function get_node_data($parent_category_id)
     {
         $model = new static;
-        $sql = "SELECT * FROM loai_san_pham WHERE parent_id=$parent_category_id";
+        $sql = "SELECT * FROM loai_san_pham WHERE parent_id=:parent_category_id";
         $stmt = $model->conn->prepare($sql);
+        $stmt->bindValue(':parent_category_id', $parent_category_id, PDO::PARAM_INT);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $output = array();

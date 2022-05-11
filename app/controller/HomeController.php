@@ -19,7 +19,7 @@ class HomeController extends BaseModel
             $sub_array[$order] = $model->Get_Condition_Sp($values);
         }
         // phần này sẽ thay đổi lại khi hoàn thiện database
-        $data_sp = $model->Get_Data_Sp();
+        $banners = $model->Get_Data('banner_img');
         include './app/views/Home/index.php';
     }
     static function treeview()
@@ -49,9 +49,9 @@ class HomeController extends BaseModel
         if (!isset($_GET['key'])) {
             $data_sp = $model->result_page($start, $limit);
         } else {
-            $data_sp = $model->result_page_key($start, $limit, $_GET['key']);
+            $key = htmlentities($_GET['key'], ENT_QUOTES);
+            $data_sp = $model->result_page_key($start, $limit, $key);
         }
-        // $data_sp = isset($_GET['key']) == false ? $model->Get_Data_Sp() : $model->Get_Data_Sp_Keyword($_GET['key']);
         include './app/views/Home/product.php';
     }
     static function product_detail()
@@ -59,7 +59,8 @@ class HomeController extends BaseModel
         $model =  new static;
         $data_aside = $model->data_aside();
         $data_sp = $model->Get_Data_Sp();
-        $data_private = $model->Get_Data_Private_Sp($_GET['id_sp']);
+        $id_sp = htmlentities($_GET['id_sp'], ENT_QUOTES);
+        $data_private = $model->Get_Data_Private_Sp($id_sp);
         include './app/views/Home/detail_product.php';
     }
     static function contact()
@@ -82,8 +83,8 @@ class HomeController extends BaseModel
     static function login()
     {
         if (isset($_POST['signin'])) {
-            $user_name = $_POST['user_name'];
-            $user_password = $_POST['user_password'];
+            $user_name = htmlentities($_POST['user_name'], ENT_QUOTES);
+            $user_password = htmlentities($_POST['user_password'], ENT_QUOTES);
             $model =  new static;
             $user = $model->Get_Condition_User("$user_name", '=', 'email');
             if ($user) {
@@ -99,7 +100,7 @@ class HomeController extends BaseModel
                         'user_password' => $user['password'],
                         'user_role' => $user['role']
                     ];
-                    $user['role'] == 1 ? header("location:admin") : header("location:index.php");
+                    $user['role'] == 1 ? header("location:Dashboard") : header("location:index.php");
                     die;
                 }
                 header("location:form_logn_in?msg=Sorry");

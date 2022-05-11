@@ -118,7 +118,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-3 pb-2 col-xs-3">
                             <div class="card product-item">
                                 <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                    <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none"><img class="imgUNcover" src="<?= $values["images_sp"] ?>" alt="ảnh sản phẩm biển hiệu của chúng tôi"></a>
+                                    <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none"><img class="imgUNcover" src="<?= url_img . $values["images_sp"] ?>" alt="ảnh sản phẩm biển hiệu của chúng tôi"></a>
                                 </div>
                                 <div class="card-body border-left border-right text-center p-0 pt-2 pb-3">
                                     <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none">
