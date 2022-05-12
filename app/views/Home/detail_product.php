@@ -154,6 +154,9 @@
                         </div>
                     </div>
                     <div class="row mt-2">
+                        <?= $data_private['mo_ta_ct'] ?>
+                    </div>
+                    <div class="row mt-2">
                         <!-- cho code tu dinh huy -->
                         <div class="noidung">
                             <p><span style="font-size: large;"><strong>Bảng giá thi công các loại bảng hiệu</strong></span></p>
@@ -315,7 +318,7 @@
                                 <div class="owl-item pb-1">
                                     <div class="card product-item">
                                         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                            <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none"><img class="imgUNcover" src="<?= $values["images_sp"] ?>" alt=""></a>
+                                            <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none"><img class="imgUNcover" src="<?= url_img . $values["images_sp"] ?>" alt="ảnh <?= $values["ten_sp"] ?>"></a>
                                         </div>
                                         <div class="card-body border-left border-right text-center p-0 pt-2 pb-3">
                                             <a href="product_detail?id_sp=<?= $values["ma_san_pham"] ?>" class="text-decoration-none">
