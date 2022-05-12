@@ -30,16 +30,16 @@
                         <div class="form-group">
                             <label for="products_name">Loại hàng</label>
                             <select class="form-control" name="categories_id" id="categories_id ">
-                                <option value="0">Lựa chọn loại hàng</option>
+                                <option selected disabled value>Lựa chọn loại biển quảng cáo</option>
                                 <?= $htmlOption ?>
-                            </select>   
-                            </div>
+                            </select>
+                        </div>
                         <div class="mb-3">
                             <label for="mau_sac" class="form-label">ảnh sản phẩm</label>
                             <input type="file" class="form-control" id="mau_sac" name="image" placeholder="nhập vào màu sắc">
                         </div>
                         <div class="mb-3">
-                        <textarea name="content" id="content" class="form-control" rows="5" placeholder="Vui lòng nhập nội dung ..."></textarea>
+                            <textarea name="content" id="content" class="form-control" rows="5" placeholder="Vui lòng nhập nội dung ..."></textarea>
                         </div>
                     </div>
                 </div>
@@ -51,9 +51,9 @@
     </div>
 </div>
 <script src="public/resources/ckeditor/ckeditor.js"></script>
-  <script>
-        CKEDITOR.replace('content')
-    </script>
+<script>
+    CKEDITOR.replace('content')
+</script>
 <?php
 require_once './vender/src_script_admin.php';
 ?>
