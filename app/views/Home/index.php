@@ -208,7 +208,7 @@
                         data: data,
                         expandIcon: 'fa fa-angle-down fa-fw',
                         collapseIcon: 'fa fa-angle-right fa-fw',
-                        indent: 2.05,
+                        indent: 1.5,
                         parentsMarginLeft: '1.25rem',
                         openNodeLinkOnNewTab: false
                     });
@@ -217,7 +217,7 @@
                         data: data,
                         expandIcon: 'fa fa-angle-down fa-fw',
                         collapseIcon: 'fa fa-angle-right fa-fw',
-                        indent: 2.05,
+                        indent: 1.5,
                         parentsMarginLeft: '1.25rem',
                         openNodeLinkOnNewTab: false
                     });
