@@ -6,10 +6,10 @@ class ProductsController extends BaseModel
     public function index()
     {
         $conn = new CustomController;
-        $data=$conn->Get_Data('san_pham');
+        $data = $conn->Get_Data('san_pham');
         require_once('app/views/admin/component/products/list.php');
     }
-    public function edit_product(Type $var = null)
+    public function edit_product($var = null)
     {
             $id = $_GET['id'];
             $conn = new CustomController;   
@@ -41,12 +41,20 @@ class ProductsController extends BaseModel
         $file = $_FILES['image'];
         if ($file['size'] > 0) {
             $avatar = $file['name'];
-            move_uploaded_file($file['tmp_name'],"public/dist/img/".$avatar);
+            move_uploaded_file($file['tmp_name'], "public/images_stores/images/" . $avatar);
         }
-        $code = '123456789qazwsxedcrfvtgbyhnujmikolp';
-        $code = str_shuffle($code);
-        $code = substr($code, 0, 10);
-        $conn->insert('san_pham',["ma_san_pham='$code',ten_sp='$name',images_sp='$avatar',mo_ta_ct='$content',ma_loai_sp=$categories_id"]);
+        $flag = true;
+        while ($flag) {
+            $code = '123456789';
+            $code = str_shuffle($code);
+            $code = substr($code, 0, 4);
+            $data = $conn->Where('san_pham WHERE ma_san_pham = "' . $code . '"');
+            if (!$data) {
+                $conn->insert('san_pham', ["ma_san_pham='$code',ten_sp='$name',images_sp='$avatar',mo_ta_ct='$content',ma_loai_sp=23"]);
+                $flag = false;
+            }
+        }
+
         header('location:list_products');
     }
     public function remove_product()
@@ -55,7 +63,7 @@ class ProductsController extends BaseModel
         // var_dump($id);
         // die;
         $conn = new CustomController;
-        $result = $conn->delete('san_pham','ma_san_pham="'.$id.'"');
+        $result = $conn->delete('san_pham', 'ma_san_pham="' . $id . '"');
         header('location:list_products');
     }
     public function update_ct_sp()
