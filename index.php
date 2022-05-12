@@ -3,6 +3,7 @@ require_once './app/controller/HomeController.php';
 require_once './app/controller/admin/DashboardController.php';
 require_once './app/controller/admin/CustomController.php';
 require_once './app/controller/admin/ProductsController.php';
+require_once './app/controller/admin/CategoryController.php';
 require_once './vender/url_server.php';
 session_start();
 $url = isset($_GET['url']) ? $_GET['url'] : "/";
@@ -73,6 +74,33 @@ switch ($url) {
         $ctr = new ProductsController();
         $ctr->edit_product();
         break;
-        
+    case 'update_ct_sp':
+        $ctr = new ProductsController();
+        $ctr->update_ct_sp();
+        break;
+    case 'list_Category':
+        $ctr = new CategoryController();
+        $ctr->index();
+        break;
+    case 'Created_Category':
+        $ctr = new CategoryController();
+        $ctr->Created_Category();
+        break;
+    case 'save_category':
+        $ctr = new CategoryController();
+        $ctr->save_category();
+        break;
+    case 'edit_category':
+        $ctr = new CategoryController();
+        $ctr->edit_category();
+        break;
+    case 'remove_category':
+        $ctr = new CategoryController();
+        $ctr->remove_category();
+        break;
+    case 'update_category':
+        $ctr = new CategoryController();
+        $ctr->update_category();
+        break;
         // doan nay thu test tren nhanh truongnqph14956
 }

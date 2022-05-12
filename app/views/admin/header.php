@@ -153,6 +153,29 @@
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
+              <i class="fa-solid fa-calendar-days"></i>
+                <p>
+                Category
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="list_Category" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>List Category</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="Created_Category" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Created</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
               <i class="fa-solid fa-box-open"></i>
                 <p>
                   Products

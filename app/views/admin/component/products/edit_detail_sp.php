@@ -20,15 +20,25 @@
                     Quản Lý Chi Tiết Sản Phẩm
                 </div>
             </div>
-            <form class="mx-auto py-1" action="update_ct_sp?id=<?= $data_detail_sp['ma_ct_sp'] ?>" method="post" enctype="multipart/form-data" name="products">
+            <form class="mx-auto py-1" action="update_ct_sp" method="POST" enctype="multipart/form-data" name="products">
                 <div class="d-flex">
+                    <input type="hidden" name="id" value = "<?php echo $data['ma_san_pham'] ?>">
                         <div class="col-lg-4">
                             <div class="mb-3">
                                 <label for="chung_loai" class="form-label">Tên Sản Phẩm</label>
                                 <input type="text" class="form-control" id="chung_loai" name="name" placeholder="nhập vào chủng loại sản phẩm" value = "<?php echo $data['ten_sp'] ?>">
                             </div>
+                            <div class="form-group">
+                                <label for="products_name">Loại hàng</label>
+                                <select class="form-control" name="categories_id" id="categories_id ">
+                                    <!-- <option value="">ok</option> -->
+                                    <?= $htmlOption ?>
+                                </select>
+                            </div>
                             <div class="mb-3">
                                 <label for="mau_sac" class="form-label">ảnh sản phẩm</label>
+                                <img src="public/dist/img/<?php echo $data['images_sp'] ?>" alt="">
+                                <input type="hidden" name="cu" value = "<?php echo $data['images_sp'] ?>">
                                 <input type="file" class="form-control" id="mau_sac" name="image" placeholder="nhập vào màu sắc">
                             </div>
                             <div class="mb-3">

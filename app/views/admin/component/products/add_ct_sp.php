@@ -27,6 +27,13 @@
                             <label for="chung_loai" class="form-label">Tên Sản Phẩm</label>
                             <input type="text" class="form-control" id="chung_loai" name="name" placeholder="nhập vào chủng loại sản phẩm">
                         </div>
+                        <div class="form-group">
+                            <label for="products_name">Loại hàng</label>
+                            <select class="form-control" name="categories_id" id="categories_id ">
+                                <option value="0">Lựa chọn loại hàng</option>
+                                <?= $htmlOption ?>
+                            </select>   
+                            </div>
                         <div class="mb-3">
                             <label for="mau_sac" class="form-label">ảnh sản phẩm</label>
                             <input type="file" class="form-control" id="mau_sac" name="image" placeholder="nhập vào màu sắc">
