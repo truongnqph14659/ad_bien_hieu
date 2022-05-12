@@ -13,8 +13,8 @@ class ProductsController extends BaseModel
     {
         $id = $_GET['id'];
         $conn = new CustomController;
-        $data = $conn->Where('san_pham WHERE ma_san_pham = "' . $id . '"');
-        $htmlOption = $this->getCategory($category = $data['ma_loai_sp']);
+        $data = $conn->where('san_pham WHERE ma_san_pham = "' . $id . '"');
+        $htmlOption = $this->getCategoryChild($category = $data['ma_loai_sp']);
         require_once('app/views/admin/component/products/edit_detail_sp.php');
     }
     public function getCategory($prend_id)
@@ -30,14 +30,15 @@ class ProductsController extends BaseModel
         $htmlOption = $Recusive->categories($prend_id);
         return $htmlOption;
     }
-    public function getCategoryChild()
+    public function getCategoryChild($category = '')
     {
         $recusion = '';
         $conn = new CustomController;
         $result = $conn->Get_Data('loai_san_pham');
         foreach ($result as $value) {
             if ($value['parent_id'] != 0) {
-                $recusion .= "<option value='" . $value['ma_loai_sp'] . "'>" . $value['ten_loai'] . "</option >";
+                $select = $value['ma_loai_sp'] == $category ? 'selected' : '';
+                $recusion .= "<option $select value='" . $value['ma_loai_sp'] . "'>" . $value['ten_loai'] . "</option >";
             }
         }
         return $recusion;

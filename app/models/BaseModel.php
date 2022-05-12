@@ -11,17 +11,6 @@ class BaseModel
     }
     // function insert data to table
     // function get data from table
-    static function delete($table = '', $data)
-    {
-        $model = new static;
-        try {
-            $sql = "DELETE FROM $table WHERE $data";
-            $stmt = $model->conn->prepare($sql);
-            $stmt->execute();
-        } catch (\Throwable $th) {
-            echo "Lỗi: " . $th->getMessage();
-        }
-    }
     static function Get_Data($table = '')
     {
         $model = new static;
@@ -30,38 +19,7 @@ class BaseModel
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    static function insert($table, $a = [])
-    {
-        $model = new static;
-        $b = implode($a);
-        $sql = "INSERT INTO $table SET $b";
-        $stmt = $model->conn->prepare($sql);
-        $stmt->execute();
-    }
-    static function Where($table = '')
-    {
-        $model = new static;
-        $sql = "SELECT * FROM " . $table;
-        $stmt = $model->conn->prepare($sql);
-        $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
-    }
-    static function update($table, $a = [], $data)
-    {
-        $b = implode($a);
-        try {
-            $model = new static;
-            $sql = "UPDATE $table SET $b WHERE $data";
-            // var_dump($sql);
-            // die;
-            $stmt = $model->conn->prepare($sql);
-            $stmt->execute();
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
-            return $result;
-        } catch (\Throwable $th) {
-            echo "Lỗi: " . $th->getMessage();
-        }
-    }
+
     // function get data from table join to another table with condiotion
     static function Get_Data_Private_Sp($id)
     {
@@ -240,5 +198,48 @@ class BaseModel
         $stmt = $model->conn->prepare($sql);
         $stmt->execute();
         header("location:index.php");
+    }
+    static function Where($table = '')
+    {
+        $model = new static;
+        $sql = "SELECT * FROM " . $table;
+        $stmt = $model->conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    static function insert($table, $a = [])
+    {
+        $model = new static;
+        $b = implode($a);
+        $sql = "INSERT INTO $table SET $b";
+        $stmt = $model->conn->prepare($sql);
+        $stmt->execute();
+    }
+    static function delete($table = '', $data)
+    {
+        $model = new static;
+        try {
+            $sql = "DELETE FROM $table WHERE $data";
+            $stmt = $model->conn->prepare($sql);
+            $stmt->execute();
+        } catch (\Throwable $th) {
+            echo "Lỗi: " . $th->getMessage();
+        }
+    }
+    static function update($table, $a = [], $data)
+    {
+        $b = implode($a);
+        try {
+            $model = new static;
+            $sql = "UPDATE $table SET $b WHERE $data";
+            // var_dump($sql);
+            // die;
+            $stmt = $model->conn->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $result;
+        } catch (\Throwable $th) {
+            echo "Lỗi: " . $th->getMessage();
+        }
     }
 }

@@ -18,6 +18,7 @@ class HomeController extends BaseModel
         foreach ($array as $order => $values) {
             $sub_array[$order] = $model->Get_Condition_Sp($values);
         }
+
         // phần này sẽ thay đổi lại khi hoàn thiện database
         $banners = $model->Get_Data('banner_img');
         include './app/views/Home/index.php';
