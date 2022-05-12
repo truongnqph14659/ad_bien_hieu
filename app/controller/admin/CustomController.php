@@ -21,4 +21,8 @@ class CustomController extends BaseModel
     {
         require_once('app/views/admin/component/user/created_user.php');
     }
+    public function update_acount()
+    {
+        # code...
+    }
 }

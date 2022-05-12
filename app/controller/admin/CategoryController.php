@@ -52,7 +52,7 @@ class CategoryController extends BaseModel
     {
         extract($_POST);
         $conn = new CustomController;
-        $result = $conn->update('loai_san_pham',["ten_loai='$name',parent_id = '$select',slug='$name'"],'ma_loai_sp = "'.$id.'"');
+        $result = $conn->update('loai_san_pham',["ten_loai='$name',parent_id = '$categories_id',slug='$name'"],'ma_loai_sp = "'.$id.'"');
         header('location:list_Category');
     }
 }

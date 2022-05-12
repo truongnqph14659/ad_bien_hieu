@@ -20,7 +20,7 @@
                             $this->recusion .= "<option value='" .$value['ma_loai_sp']. "'>".$text.$value['ten_loai']."</option >";   
                         }
                     }
-                    $this->categories($prend_id,$value['ma_loai_sp'],$text.'-');
+                    // $this->categories($prend_id,$value['ma_loai_sp'],$text.'-');
                 }
             }
             return $this->recusion;

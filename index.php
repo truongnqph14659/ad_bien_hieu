@@ -50,6 +50,10 @@ switch ($url) {
         $ctr = new CustomController();
         $ctr->Created_account();
         break;
+    case 'update_acount':
+        $ctr = new CustomController();
+        $ctr->update_acount();
+        break;
     case 'list_products':
         $ctr = new ProductsController();
         $ctr->index();
