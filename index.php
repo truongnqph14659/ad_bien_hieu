@@ -4,6 +4,7 @@ require_once './app/controller/admin/DashboardController.php';
 require_once './app/controller/admin/CustomController.php';
 require_once './app/controller/admin/ProductsController.php';
 require_once './app/controller/admin/CategoryController.php';
+require_once './app/controller/admin/ConfigurationController.php';
 require_once './vender/url_server.php';
 session_start();
 $url = isset($_GET['url']) ? $_GET['url'] : "/";
@@ -105,6 +106,26 @@ switch ($url) {
     case 'update_category':
         $ctr = new CategoryController();
         $ctr->update_category();
+        break;
+    case 'list_Banner':
+        $ctr = new ConfigurationController();
+        $ctr->index();
+        break;
+    case 'edit_banner':
+        $ctr = new ConfigurationController();
+        $ctr->edit_banner();
+        break;
+    case 'Created_Banner':
+        $ctr = new ConfigurationController();
+        $ctr->Created_Banner();
+        break;
+    case 'update_banner':
+        $ctr = new ConfigurationController();
+        $ctr->update_banner();
+        break;
+    case 'insert_banner':
+        $ctr = new ConfigurationController();
+        $ctr->insert_banner();
         break;
         // doan nay thu test tren nhanh truongnqph14956
 }
