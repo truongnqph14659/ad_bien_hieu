@@ -34,7 +34,7 @@
             <!-- fake data -->
             <?php foreach ($data as $key => $value) : ?>
               <tr>
-                <td><img src="public/dist/img/<?php echo $value['img_banner'] ?>" alt="" style ="width:200px"></td>
+                <td><img src="<?= url_img . $value['img_banner'] ?>" alt="" style="width:100px"></td>
                 <td>
                   <span class="badge badge-success"><a href="edit_banner?id=<?= $value['id_banner'] ?>"><i class="fas fa-edit" style="color: #ffff;"></i></a></span>
                 </td>

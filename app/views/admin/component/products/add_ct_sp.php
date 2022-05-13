@@ -35,7 +35,7 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="mau_sac" class="form-label">ảnh sản phẩm</label>
+                            <label for="mau_sac" class="form-label">ảnh sản phẩm (chọn ảnh phù hợp tối đa 400-500px)</label>
                             <input type="file" class="form-control" id="mau_sac" name="image" placeholder="nhập vào màu sắc">
                         </div>
                         <div class="mb-3">
