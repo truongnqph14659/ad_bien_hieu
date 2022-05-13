@@ -36,9 +36,14 @@ switch ($url) {
         break;
         // admin
     case 'Dashboard':
-        $ctr = new DashboardController();
-        $ctr->index();
-        break;
+        if (isset($_SESSION['user_account']) && $_SESSION['user_account']['user_role'] == 1) {
+            $ctr = new DashboardController();
+            $ctr->index();
+            break;
+        } else {
+            echo "404 NOT FOUND....!";
+            break;
+        }
     case 'edit_acount':
         $ctr = new CustomController();
         $ctr->edit_acount();

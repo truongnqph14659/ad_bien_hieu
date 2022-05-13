@@ -23,7 +23,8 @@
                     <li><a class="dropdown-item text-dark" href="#">tài khoản của tôi</a></li>
                     <li><a class="dropdown-item text-dark" href="#">đổi mật khẩu</a></li>
                 <?php endif; ?>
-                <li><a class="dropdown-item text-dark" href="logn_out">đăng xuất</a></li>
+                <li><a class="dropdown-item text-dark" href="logn_out">Đăng Xuất</a></li>
+                <li><a class="dropdown-item text-dark" href="Dashboard">Quản Trị</a></li>
             </ul>
         </div>
     <?php

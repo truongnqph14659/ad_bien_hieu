@@ -22,7 +22,7 @@
             </div>
             <form class="mx-auto py-1" action="insert_ct_sp" method="POST" enctype="multipart/form-data" novalidate="novalidate">
                 <div class="d-flex">
-                    <div class="col-lg-4">
+                    <div class="col-lg-12">
                         <div class="mb-3">
                             <label for="chung_loai" class="form-label">Tên Sản Phẩm</label>
                             <input type="text" class="form-control" id="chung_loai" name="name" placeholder="nhập vào chủng loại sản phẩm">
