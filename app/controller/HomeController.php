@@ -38,22 +38,25 @@ class HomeController extends BaseModel
         $data_aside = $model->data_aside();
         $total_pages = isset($_GET['key']) == true ? $model->records_page_key($_GET['key']) : $model->records_page();
         $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
-        $limit = 20;
-        $total_page = ceil($total_pages['total'] / $limit);
-        if ($current_page > $total_page) {
-            $current_page = $total_page;
-        } else if ($current_page < 1) {
-            $current_page = 1;
-        }
-        // Tìm Start
-        $start = ($current_page - 1) * $limit;
-        if (!isset($_GET['key'])) {
-            $data_sp = $model->result_page($start, $limit);
+        if ($total_pages['total'] != '0') {
+            $limit = 20;
+            $total_page = ceil($total_pages['total'] / $limit);
+            if ($current_page > $total_page) {
+                $current_page = $total_page;
+            } else if ($current_page < 1) {
+                $current_page = 1;
+            }
+            // Tìm Start
+            $start = ($current_page - 1) * $limit;
+            if (!isset($_GET['key'])) {
+                $data_sp = $model->result_page($start, $limit);
+            } else {
+                $data_sp = $model->result_page_key($start, $limit, $_GET['key']);
+            }
+            include './app/views/Home/product.php';
         } else {
-            $key = htmlentities($_GET['key'], ENT_QUOTES);
-            $data_sp = $model->result_page_key($start, $limit, $key);
+            include './app/views/Home/sub_product.php';
         }
-        include './app/views/Home/product.php';
     }
     static function product_detail()
     {

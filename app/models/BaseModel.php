@@ -131,7 +131,7 @@ class BaseModel
         if (is_numeric($key_search)) {
             $sql = "SELECT count(ma_san_pham) as total FROM san_pham WHERE ma_san_pham=$key_search";
         } else {
-            $sql = "SELECT count(ma_san_pham) as total FROM san_pham WHERE ten_sp LIKE'%$key_search%'";
+            $sql = "SELECT count(ma_san_pham) as total FROM san_pham WHERE ten_sp LIKE '%$key_search%'";
         }
         $stmt = $model->conn->prepare($sql);
         $stmt->execute();
